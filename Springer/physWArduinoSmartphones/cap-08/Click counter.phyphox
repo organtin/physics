@@ -1,0 +1,68 @@
+<phyphox xmlns="http://phyphox.org/xml" xmlns:editor="http://phyphox.org/editor/xml" version="1.7" editor:version="1.0" locale="en">
+    <title>Click counter</title>
+    <category>Statistics</category>
+    <description>This experiment just counts sound events whose intensity is above a given threshold. It can be used to simulate a Geiger counter counting radioactive decays. Just provide a random source of clicks and count them.</description>
+    <icon format="base64">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</icon>
+    <data-containers>
+        <container size="19200" static="false">out</container>
+        <container size="1000" static="false">stddev</container>
+        <container size="1000" static="false">output</container>
+        <container size="1000" static="false">result</container>
+        <container size="1000" static="false">count</container>
+        <container size="1000" static="false">out (1)</container>
+        <container size="1000" static="false">quotient</container>
+    </data-containers>
+    <input>
+        <audio editor:uuid="101" editor:posx="115.2118034362793" editor:posy="414.9479293823242" rate="48000">
+            <output>out</output>
+        </audio>
+    </input>
+    <output>
+    </output>
+    <analysis sleep="0.1"  onUserInput="false">
+        <timer editor:uuid="149" editor:posx="122.0833387374878" editor:posy="713.3333511352539">
+            <output as="out" clear="false">out (1)</output>
+        </timer>
+        <average editor:uuid="150" editor:posx="347.4444532394409" editor:posy="416.8263931274414">
+            <input as="buffer" clear="false">out</input>
+            <output as="stddev" clear="false">stddev</output>
+        </average>
+        <if editor:uuid="151" editor:posx="602.836817741394" editor:posy="379.10765838623047" less="false" equal="false" greater="true">
+            <input as="a" clear="false">stddev</input>
+            <input as="b" clear="false">output</input>
+            <input as="true" type="value">1</input>
+            <output as="result" clear="false">result</output>
+        </if>
+        <count editor:uuid="152" editor:posx="893.2639417648315" editor:posy="374.8993148803711">
+            <input as="buffer" clear="false">result</input>
+            <output as="count">count</output>
+        </count>
+        <divide editor:uuid="153" editor:posx="1184.0104398727417" editor:posy="594.7291946411133">
+            <input as="dividend" clear="false">count</input>
+            <input as="divisor" clear="false">out (1)</input>
+            <output as="quotient">quotient</output>
+        </divide>
+    </analysis>
+    <views>
+        <view label="RESULTS">
+            <graph editor:uuid="160" editor:posx="1607.638918876648" editor:posy="430.05904388427734" label="RMS history" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="true" history="1" labelX="time" labelY="Intensity" labelZ="" unitX="s" unitY="a.u." unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="3" zPrecision="3" scaleMinX="fixed" scaleMaxX="auto" scaleMinY="extend" scaleMaxY="extend" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">out (1)</input>
+                <input axis="y">stddev</input>
+            </graph>
+            <edit editor:uuid="161" editor:posx="108.09722423553467" editor:posy="194.84375095367432" label="Threshold" signed="true" decimal="true"   unit="a.u." factor="1" default="0.1">
+                <output>output</output>
+            </edit>
+            <value editor:uuid="162" editor:posx="1181.4653577804565" editor:posy="372.4444808959961" label="Clicks" size="3" precision="0" scientific="false"  factor="1" >
+                <input>count</input>
+            </value>
+            <value editor:uuid="163" editor:posx="1438.0034818649292" editor:posy="594.8055801391602" label="rate" size="2" precision="2" scientific="false" unit="Hz" factor="1" >
+                <input>quotient</input>
+            </value>
+            <value editor:uuid="164" editor:posx="1193.1459379196167" editor:posy="787.5868453979492" label="Time" size="1" precision="3" scientific="false" unit="s" factor="1" >
+                <input>out (1)</input>
+            </value>
+        </view>
+    </views>
+    <export>
+    </export>
+</phyphox>
