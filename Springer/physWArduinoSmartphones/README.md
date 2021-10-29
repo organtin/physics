@@ -2,7 +2,7 @@
 This is a public repository of resources connected with the textbook 'Physics Experiments with Arduino and
 Smartphone' by Giovanni Organtini. This repository is maintained by the author.
 
-All the code is distributed according to the [GNU Public Public License v. 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). You are free to redistribute it and/or modify it under the terms given in the license
+All the code is distributed according to the [GNU Public License v. 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). You are free to redistribute it and/or modify it under the terms given in the license
 published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
 version.
 
