@@ -14,4 +14,6 @@
 ||eq (15.40)|<img src="https://latex.codecogs.com/svg.latex?\left[ML^3T^{-1}\right]"/>|<img src="https://latex.codecogs.com/svg.latex?\left[ML^{-1}T^{-2}\right]"/>|
 ||eq (15.42)|whole equation|<img src="https://latex.codecogs.com/svg.latex?\left[v\right]=\left[LT^{-1}\right]=\left[M^{n+k+\ell}L^{-n-3k+2\ell}T^{-2n-2\ell}K^{m-\ell}\right]"/>|
 |||last two lines|<img src="https://latex.codecogs.com/svg.latex?m=\ell=0"/>, and <img src="https://latex.codecogs.com/svg.latex?n=-k=\frac{1}{2}"/> |
+<!--sigma_A ve sigma_a -->
+<!--|210|eq. (9.42)|| <img src="https://latex.codecogs.com/svg.latex?m=P\left(\lvert\langle x\rangle-\mu \rvert\ge k\frac{\sigma}{\sqrt{N}}\right)"/>||-->
 <!--<img src="https://latex.codecogs.com/svg.latex? "/>-->
