@@ -11,6 +11,7 @@
 |----|----|------|-------|----|---------|
 |94|various|ms<sup>-1</sup>|ms<sup>-2</sup>|2021|Giovanni Organtini|
 |88|eq. (6.10)|<img src="https://latex.codecogs.com/svg.latex?\sqrt{2\frac{h_0+y}{a}}\simeq\sqrt{\frac{2h_0}{a}}+\frac{y}{2\sqrt{\frac{2h_0}{a}}}" />|<img src="https://latex.codecogs.com/svg.latex?\sqrt{2\frac{h_0+y}{a}}\simeq\sqrt{\frac{2h_0}{a}}+\frac{y}{\sqrt{2ah_0}}" />|2022|Giovanni Organtini||
+|119|eq. (7.23)||<img src="https://latex.codecogs.com/svg.latex?P\left(G\vert%20R\right)=\frac{P\left(G,\,R\right)}{P\left(R\right)}"/>|2022|Giovanni Organtini|
 |209|eq. (9.40)|<img src="https://latex.codecogs.com/svg.latex?\lim_{n\to\infty}"/>| <img src="https://latex.codecogs.com/svg.latex?\lim_{N\to\infty}"/>|2022|Giovanni Organtini|
 |210|eq. (9.42)|| <img src="https://latex.codecogs.com/svg.latex?P\left(\lvert\langle%20x\rangle-\mu%20\rvert\ge%20k\frac{\sigma}{\sqrt{N}}\right)\le\frac{1}{k^2}"/>|2022|Giovanni Organtini|
 | |9|Taking the limit for|Letting <img src="https://latex.codecogs.com/svg.latex?k\frac{\sigma}{\sqrt{N}}=\epsilon"/>, <img src="https://latex.codecogs.com/svg.latex?\frac{1}{k^2}=\frac{\sigma^2}{\epsilon^2N}"/>, and, taking the limit for| | |
