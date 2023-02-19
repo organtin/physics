@@ -17,6 +17,7 @@
 #
 import serial
 import time
+import re
 import os
 import pty
 import getopt
@@ -40,8 +41,10 @@ def genData(usb, t, simulateHeader = False):
     if simulateHeader and np.random.randint(100) > 50:
         xlabel = ''
         if t >= 0:
-            xlabel = '<x>time (s)</x>'
-        s = f'<header>{xlabel}<y>x (m),y (m/s^2),z (kg)</y></header>\n'
+            xlabel = '<X>time (s)</X>'
+        s = f'<HEADER>{xlabel}<Y>x (m),y (m/s^2),z (kg)</Y>'
+        s += '<YLIM>-5,None</YLIM>'
+        s += '</HEADER>\n'
         simulateHeader = False
     usb.write(bytes(s, 'utf-8'))
     return simulateHeader,t
@@ -58,7 +61,7 @@ def createplot():
     plt.subplots_adjust(left = .05, right = .95)
     return ax
 
-def plot(ax, data, ylabel = [], style = '-'):
+def plot(ax, data, ylabel = [], style = '-', ylim = None):
     # make the actual plot
     ax.cla()
     for i in range(len(data) - 1):
@@ -69,6 +72,8 @@ def plot(ax, data, ylabel = [], style = '-'):
     if len(ylabel) > 0:
         ax.set_xlabel(ylabel[0])
     ax.legend(loc = 'upper left')
+    if ylim != None:
+        ax.set_ylim(ylim[0], ylim[1])
     plt.grid(True)
     plt.pause(1.e-6)    
 
@@ -147,14 +152,15 @@ def help(switches, hlprs):
     exit(0)
 
 # initial values
-T = 0
-d2plot = [deque()]
-yLabel = []
-t = -1
-refresh = 100
-n = -1
-marker = '-'
+T        = 0
+d2plot   = [deque()]
+yLabel   = []
+t        = -1
+refresh  = 100
+n        = -1
+marker   = '-'
 baudrate = 9600
+yLim     = None
 
 print(f'{name}  Copyright (C) 2023 giovanni.organtini@gmail.com')
 print(f'This program comes with ABSOLUTELY NO WARRANTY.')
@@ -200,6 +206,9 @@ f = open(outfile, 'w')
 
 def processHeader(d2plot, outfile, s = ''):
     # process header
+    tags = re.findall('<[^>]+>', s)
+    for t in tags:
+        s = s.replace(t, t.lower())
     hdr = s[s.find('<header>')+len('<header>'):s.find('</header>')]
     xLabel = 'nLoop'
     if s.find('<x>') > 0:
@@ -214,7 +223,15 @@ def processHeader(d2plot, outfile, s = ''):
     yLabel.append(xLabel)
     for i in range(len(lbl)):
         yLabel.append(lbl[i])
-    return d2plot, yLabel, f
+    yLim = None
+    if s.find('<ylim>') > 0:
+        yLim = s[s.find('<ylim>')+len('<ylim>'):s.find('</ylim>')].split(',')
+        for i in range(2):
+            if yLim[i] != 'None':
+                yLim[i] = float(yLim[i])
+            else:
+                yLim[i] = None            
+    return d2plot, yLabel, f, yLim
 
 count = 0
 while count < n or n < 0:
@@ -224,8 +241,8 @@ while count < n or n < 0:
         simulateHeader, t = genData(usb, t, simulateHeader)
         arduino = os.read(master, 1000).decode('utf-8')
     # process header, if any
-    if '<header>' in arduino:
-        d2plot, yLabel, f = processHeader(d2plot, outfile, arduino)
+    if '<header>' in arduino.lower():
+        d2plot, yLabel, f, yLim = processHeader(d2plot, outfile, arduino)
     else:
         splt = arduino.split(',')
         # append data to data to plot
@@ -249,7 +266,7 @@ while count < n or n < 0:
             for i in range(len(splt) + 1):
                 d2plot[i].popleft()
         # plot
-        plot(ax, d2plot, ylabel = yLabel, style = marker)
+        plot(ax, d2plot, ylabel = yLabel, style = marker, ylim = yLim)
         T += 1
         if n > 0:
             count += 1
