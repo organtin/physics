@@ -10,6 +10,9 @@ Software and other resources are distributed in the hope that they will be usefu
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
 
+# Tools
+[`acp.py`](https://github.com/organtin/physics/blob/d0ad82549e63dceeb8cb4fd2bee1096f08a91d30/Springer/physWArduinoSmartphones/acp.py) is an Arduino Clever Plotter. It can be be used to read Arduino data from the serial port, plot them, and store them onto a file.
+
 # About this book
 This book on the use of Arduino and Smartphones in physics experiments, with a focus on mechanics, introduces various techniques by way of examples. The main aim is to teach students how to take meaningful measurements and how to interpret them. Each topic is introduced by an experiment. Those at the beginning of the book are rather simple to build and analyze. As the lessons proceed, the experiments become more refined and new techniques are introduced. Rather than providing recipes to be adopted while taking measurements, the need for new concepts is raised by observing the results of an experiment. A formal justification is given only after a concept has been introduced experimentally. The discussion extends beyond the taking of measurements to their meaning in terms of physics, the importance of what is learned from the laws that are derived, and their limits. Stress is placed on the importance of careful design of experiments as to reduce systematic errors and on good practices to avoid common mistakes. Data are always analyzed using computer software. C-like structures are introduced in teaching how to program Arduino, while data collection and analysis is done using Python. Several methods of graphical representation of data are used.
 
