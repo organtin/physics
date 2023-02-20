@@ -42,7 +42,7 @@ def genData(usb, t, simulateHeader = False):
         xlabel = ''
         if t >= 0:
             xlabel = '<X>time (s)</X>'
-        s = f'<HEADER>{xlabel}<Y>x (m),y (m/s^2),z (kg)</Y>'
+        s = f'<HEADER>{xlabel}<Y>x (m),y (m/s$^2$),z (kg)</Y>'
         s += '<YLIM>-5,None</YLIM>'
         s += '</HEADER>\n'
         simulateHeader = False
@@ -54,7 +54,7 @@ def createplot():
     px = 1/plt.rcParams['figure.dpi']
     fig = plt.figure(figsize = (1024*px, 480*px))
     fig.suptitle('Arduino Clever Plotter', fontsize = 16, fontweight = 'bold')
-    fig.canvas.set_window_title('readArduino v1.0')
+    fig.canvas.set_window_title('ACP v1.0')
     text = fig.text(.5, .91, 'Copyright \u00a9 2023 by giovanni.organtini@gmail.com',
                     {'horizontalalignment': 'center', 'size': 8})
     ax = fig.add_subplot(1, 1, 1)
@@ -87,7 +87,7 @@ simulateHeader = False
 
 # get options
 argv = sys.argv[1:]
-switches = 'hp:f:stn:r:m:lb:'
+switches = 'hp:f:stn:r:m:lb:v'
 helpers = [
     'print this help',
     'read data from port <value>',
@@ -98,7 +98,8 @@ helpers = [
     'refresh rate',
     'marker for the plot (see matplotlib doc)',
     'show license',
-    'baudrate (default is 9600)'
+    'baudrate (default is 9600)',
+    'be verbose'
     ]
 opts, args = getopt.getopt(argv, switches)
 
@@ -145,22 +146,24 @@ def help(switches, hlprs):
         j += 1
     print()
     print(f'{blanks}The XML format of the header is as follows:')
-    print(f'{blanks}<header><x>time(s)</x><y>x (m),y (m/s^2),z (kg)</y></header>')
+    print(f'{blanks}<header><x>time(s)</x><y>x (m),y (m/s^2),z (kg)</y><ylim>-3,None</ylim></header>')
     print(f'{blanks}The content of the <x> tag, that can be omitted, is used as ')
     print(f'{blanks}label for the x-axis. The content of the <y> tag is a comma ')
     print(f'{blanks}separated list of the legends for the expected data.')
+    print(f'{blanks}The <ylim> tag is optional and sets the limits of the vertical scale.')
     exit(0)
 
 # initial values
 T        = 0
-d2plot   = [deque()]
-yLabel   = []
 t        = -1
-refresh  = 100
 n        = -1
 marker   = '-'
+refresh  = 100
+d2plot   = [deque()]
+yLabel   = []
 baudrate = 9600
 yLim     = None
+verbose  = False
 
 print(f'{name}  Copyright (C) 2023 giovanni.organtini@gmail.com')
 print(f'This program comes with ABSOLUTELY NO WARRANTY.')
@@ -191,10 +194,12 @@ for (o, a) in opts:
         license()
     elif o == '-b':
         baudrate = int(a)
+    elif o == '-v':
+        verbose = True
 
 # try to open the port
 thePort = Path(port)
-timeout = 2
+timeout = 200
 if not thePort.exists():
     master, slave = pty.openpty()
     port = os.ttyname(slave)
@@ -206,6 +211,7 @@ f = open(outfile, 'w')
 
 def processHeader(d2plot, outfile, s = ''):
     # process header
+    ret = -1
     tags = re.findall('<[^>]+>', s)
     for t in tags:
         s = s.replace(t, t.lower())
@@ -213,6 +219,7 @@ def processHeader(d2plot, outfile, s = ''):
     xLabel = 'nLoop'
     if s.find('<x>') > 0:
         xLabel = s[s.find('<x>')+len('<x>'):s.find('</x>')]
+        ret = 0
     lbl = s[s.find('<y>')+len('<y>'):s.find('</y>')]
     f = open(outfile, 'w')
     f.write(f'{xLabel},{lbl}\n')    
@@ -230,43 +237,55 @@ def processHeader(d2plot, outfile, s = ''):
             if yLim[i] != 'None':
                 yLim[i] = float(yLim[i])
             else:
-                yLim[i] = None            
-    return d2plot, yLabel, f, yLim
+                yLim[i] = None
+    if verbose:
+        print('---- header found ----')
+        print(yLabel)
+        print(yLim)
+    return d2plot, yLabel, f, yLim, ret
 
 count = 0
+iteration = 0
+arduino = usb.readline().rstrip().decode('utf-8', 'ignore') # discard first line
 while count < n or n < 0:
     # read data
-    arduino = usb.readline().rstrip().decode('utf-8')
-    if not thePort.exists():
+    arduino = usb.readline().rstrip().decode('utf-8', 'ignore')
+    if verbose:
+        print(arduino)
+    if timeout == 0:
         simulateHeader, t = genData(usb, t, simulateHeader)
-        arduino = os.read(master, 1000).decode('utf-8')
+        arduino = os.read(master, 1000).decode('utf-8')        
     # process header, if any
     if '<header>' in arduino.lower():
-        d2plot, yLabel, f, yLim = processHeader(d2plot, outfile, arduino)
+        d2plot, yLabel, f, yLim, t = processHeader(d2plot, outfile, arduino)
     else:
         splt = arduino.split(',')
-        # append data to data to plot
+        L = len(splt)
+        # append data to data-to-plot
         if t >= 0:
             d2plot[0].append(float(splt[0]))
             splt = splt[1:]
+            L -= 1            
         else:
             d2plot[0].append(T)
             f.write(f'{T},')
         f.write(f'{arduino}\n')
         # if the number of data to plot is not equal to the
         # data read, readjust data to plot
-        if len(d2plot) != len(splt) + 1:
-            for i in range(len(splt)):
+        if len(d2plot) != L + 1:
+            for i in range(L):
                 d2plot.append(deque())
-        for i in range(len(splt)):
+        for i in range(L):
             d2plot[i + 1].append(float(splt[i]))
         # if the length of data to plot is too high, remove
         # data on the left
         if len(d2plot[0]) > refresh:
-            for i in range(len(splt) + 1):
+            for i in range(L + 1):
                 d2plot[i].popleft()
         # plot
-        plot(ax, d2plot, ylabel = yLabel, style = marker, ylim = yLim)
+        iteration += 1
+        if iteration % 20 == 0:
+            plot(ax, d2plot, ylabel = yLabel, style = marker, ylim = yLim)
         T += 1
         if n > 0:
             count += 1
