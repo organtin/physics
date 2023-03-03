@@ -1,0 +1,181 @@
+<phyphox xmlns="http://phyphox.org/xml" xmlns:editor="http://phyphox.org/editor/xml" version="1.7" editor:version="1.0" locale="en">
+    <title>Magnetic Field</title>
+    <category>Statistics</category>
+    <description>Take the average over measurements of the magnetic field components</description>
+    <icon format="base64">iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAIABJREFUeF7tnQfYdVlZnt/HGMEYEikWjIox0qKAdEYUAkMdGJowSO8ISofQe5dhhgGGLk2aVEURAzgiAUSqEgSjiIFANGJEWsBEk8fr/lnfzPm/b7V9zj77nH3+817XXD8X3zp7rb32elZ51/M+r+IEMNv/PCJ+NiIuExH8b6X/vq3zX8r3lj0oN+Q3cyn7jxHxoYh4qKQPngBD59hA2WmzfZGIeGdEXH6nX3Tal/v7iLipJPp1p22nAWL7whHxuxFx2Z3+ipt5OUByM0nv2Ez109S6swCxfaEEjstN05UnZC3/JyJuIentu/r2OwkQ2xeMiHP226pJhu3/5Xwn6W2T1DZxJTsHENvfHRG/ExFXnLgvT+TqAMmtJP3GrnXCTgHE9r+OiHdFxJV37UPN4H3+ISJuLenXZtDW7ibuDEBs/6vkrbpqx9t/MyLeExGfjgj20f8/IrzEv8v85qCuVX47xjN66sclfsmIuElE3DYiztfoW9zAPyfpzR3fYBZFdgIgti8QEXhTTmr0OluBp0XEsyR9ZRZfaEsaafvfRsRrOvoYkNxO0hu2pOkrNWP2ALH9LyPiP0XE1Rs98bWIuJGk967UYyfwj22fPyLeEhE3bHTD/4uI20v61bl316wBYvu7IuK3I+JnGh/i6xFxfUm/P/cPtun222abxRbqRh0guZMkVp3Z2mwBYvtfRAT+92t2gOOGkt4326+0ZQ23/R0R8aaIOLXRNM5Kd5b0qi17he7mzBIgtr8zIn4rIq7VeNP/HRGnSPrP3T2yL9jVAwkknDNu2gGSu0l6RdeDt6zQ7ACSwPGbEXFyoy+/kc4cv7dlfb4zzUkk0NdHxM07QHIPSS+b28vPCiDpkMhl1HUbHY0b98aS4GEVLe2nOXDCwO1l6w5h3h5+5iq/XYYlvEr99NvjJH240YffHhEcxmFLV4tGxM9LesmcQDIbgKTB/FYO240OhkR3E0lcGNbAwT4aj0zrsDmn7zl2W3GF49yoUtttAxIO46d1gOQXJL1w7Iau63mzAEja73JDe0oHOJo07LQ14JDJBdje6j3w1Yi4gaQPNCacfxYRr+aisAMk95H0/Dl0/NYDJIEDt+KNGx3KjTj0a+5EaisHt8McLm82hw+0JW3kDglP4Ps7QPJKLgo72n0/Sc/tKLfRIlsNkAEzPTfk0K7xbNXA0btf3uhH2dLKuUvCI1i9aLXNuQeP1R063uOBks7qKLexIlsLkLSvZaZveUgAxy0l4dmqgYMtwGs79skb+xgzqLjLbZ5A8lLuQDre6SGSzugot5EiWwmQBI4ezwgMUmjWHN5b4OjZH2/kI8ysUkCCh7DqPk8gwWN11473e5ikZ3SUm7zI1gHEdu9MDykOejWeqBo4WPJ/pXNfPPkHmGmF3DGd2uFGZ3y9KCLu0fGej5QEkXSrbKsAksDRM9MDjttIwhPVAkfvfnirPswMGsNdEx7DljudMfYC7kA63ukxkp7cUW6yIlsDkLQk98z0MEVv26JTD9wHT9bhO1ZRl3CDbcbZ2RHxCx3v/3hJT+goN0mRrQDIAM9HF406fZBf7tz/TtLRO1wJ7vWbS4JVXTXbuHXv0yoXEU+U9LiOcmsvsnGADJjpYYbesUWfTuDo3feuvYNPkAoACcINVTc7fWEbt+79O/rlKZIe3VFurUU2CpABM30XbTo9jxvae6211/YPz/VAt3CDbdy6D+roxqdLekRHubUV2RhABsz0gKOLLm37eZ373LV16An+YNzup0n69VY/2Mat+x9b5SLidEkP7Si3liIbAciAmR5hgbv30KRtPyci7ruWXto/dEgPABKEG6ru97Tdwq378I6HnynpwR3lRi+yKYD0zPSAo4sebftZEfGA0Xtn/8BlewA3PJ7GN7YeYBu37qNa5SLiLEkP7Cg3apHJAdI50wOOe0visF0128+MiI3MLq22neB/ByQINxBQ1fqGuHUf2yoXEc+VdL+OcqMVmRQgA2b6X+yhQ9v+JaT4R+uN/YPG7gHc8nge4cC1QIJb9/GtchGBEwa6PJPo2m0ygAyY6e8riUulVoc+NSI26uFotXH/92M9AEgQboAh0fqmj+EOpFUu0VfYYawdJJMAZMBM/wBJz251kO0nRcTGfeStdu7/fm4P4Im8qyRiRVogeWREPKVVLiIgQnJGXStI1g4Q270z/YMlndnqGNssw1txy9pq6/7vx/UAIMEj+fJWv9h+WEQ8vVUuIhCBQAyCZ6/F1gqQATM9Kb1Ob72h7d4luPWo/d830wPM9veUBA2otZI8hDuQVrmIYFVidVoLSNYGkAEz/SMkNWcL271Lb0ef7otssAeGeChx6zZ3FRGBMB3nnNFBshaADJjpHyWJLVhrNuldcluP2v99O3oAkHQJN9iGt9UTlounDI8ZToHRbHSADJjpHyuJw3YLHL1LbetR+79vXw/0eixhAPcIPBCFyt3LaCAZFSADDldPkNT0edvuXWK379OXWwSp7zMR8RfpP/73FyMCUQRYsURAIi5BvhOyZf1ARPxQRFwiIi4dESQJ2iXr9VzeOyJgYLTGLLf33OJzUbmytSrrrsB270z/ZEkctlsrR+/S2nrUpv+O+BpKIIhn899HJAGEpcz2j0YESYJQtEdh8seWetB2/ajXg0lUItGJrXGLTBQRp/DCVrJWRV0Ptw11uUeZ4mmSOGy3wNG7pLYetam/AwqEJFBleZckVo21mO2LJ9lPBNvmnNG315NJfDsUpNbYhVEMs3glkLQqaX5U25AEIQu27BmSOGy3wMFSOgvVvcyLfCh5XX59lVWi1Uelv9u+fBJIuFNEkB5ibtbr0UQphYtCtqM1Q8cZ1ZulJ6iVAGIbejk085adIYktWAsc94wIdFtXalernpH/jkeG2QpK9lbkIElpsIn/ZmUnX/yc7NGSmjfptpkEuChsgYT01OimLbWtXXog2uYDcGhqGfkAm9Fjtu8eES+eGTg4WzxI0kdanbCJv6fEpvQ9gUlzWlFQlW9ysmyj3ohqTQskxMsTNz8YJEsBxHbvYenZkppxGrbvEhEo8S3Vng0MPjxQ7Jlnkc3V9g+mrd+tNtBXy1bZJdxgm+y7qOGgp1Yzkryi3YwSS7cNHpC2ew9JZ0tqRvjZvmNEwM9pzQLdL7XmgmwBkctEYXBps33RiLhURPxIcuXi1iVzFsZMh6r630TE51O66s+s6t+3jZo97afuOVivxxMHBWzhFkjQ8ELLC02vLhsEENscjuDRtH73AklNDSTbt09cmjmA469SbHxT3ibX87Yvk3Kb/IeIuEpEfE/XFzqvEKD5o4ggEek5EfFuSSgcDjLbF0l791Z+wUHPXWPhXs8nqyO36dwh1Yy+I39MV9+1Bvq5FQ04FHGOuFeLhmz7NolD00L9Gvu++9GcNVCP/1/dv/iWxM2/h/6QBLPJMz6m8YFJ9cDM+bah7kzbxIJzGJ7D5NTrASXL1esighQXNXt30hdugqQLIAMOQ6wusDWrHH3bt04ZieYADg6BxB10uQqTIAW5R2ABtNJTjwUYbuK5QHueJLZlXWab9HPc1ZBrftut1xNKNgDCfFsgIbEr6RyqW+UmQNIhCLZka6bhHIE8Twsct0woby2F2/DBHi6JsN4us80MRnz1j3f9YPxCfGw8i+hJ/V3P421fIaXT/r6e8hsu0yXcYJvMuwCfNHs1wy1PYiBoPlmrAsR27+Gni5Nv+xYJ3XMAR3cGJNs/mQbmT214AB1U/7cRAZ3nha0Jix/YvmREkPAU3te223MkNZUZbZORDC9jCySc6UgxRxatI1YEiG0OPeznWtugLi6+bbYdoLq19G3DB+rKfJQSi0K65J6h1U+beC8+PnESn25VnigrnLXmsJKwSsIEbu1WyGmJPtf5Gu9P/kVAgufwOMsCJG0VoA63Znq8BndoBarYxmMCmucAjq5tVRpQ7HWhd2yzse0i9oKzVNVsw+V6z0wYw7iryZjbAskNIoIEsOdvvD6ZfMnoC4/uXDsCkAEzfRf33jZplkFxa6lrfb8p/v5SSdzotwYSgMd7xN3FXIwBxbaxSt6zfZ2IwJXdmhy34b27hBtsXy/RgQ7umUptJyf89SR9+aDAcQBJF0kkpWnN9HDuoRNXA1OSlwT0tpa4behsthfXaXmrUoQbYaAtp8U2vNPhNrwz8ZKy++2DwgM4dtvwjjAwEG5orSQnRwR5LFsg+ShhBAdOjnMBMuBQw1YJ7dVqQEpCLWzKOYCD2+ortlyktuEHNWNZtmHUVNoAb4xZsurlss15cS7UFDyoKKZUY9JtX4s7ow5e2h+myfJLxwAyYKbv4tinZRq0tvZ92zCWmHmYMbhhLdqOgOPg/Zglr507lC6sImwf/0tEXGwbPlJHG+Bj3aUDJNeMCPKYfFfjmWy3fkq2r56oC62ZntUA2nBrD3vthNLWUtbxzpMUaXLGBggHTNLgkSohSy2H0uIFaJroqjkIR2rLWI/hXIjXrrX15wL37R0XpLcEIFyWAJKasSyRQah6m2wbnhHonAu1GvfnT9Z4OenSCSfDHM8crYH3CkkwqWsrJ3v8nlTOrbqm+jtXE3hWWyBhu8WZrOaMeAIAgf5bWz24kmfPWuXS275GQmVr6Zqqo3rqgWpQJB/ahm1LlOAFeh420zK4SqGpZM02pMo/jYgLzuj9cL+jbtI6J7fykzwVgLBlKqEI8FxS0n9vzDI/nVyDc+D0HLwKseK4/0oDg/MT4ICFu8vGxHdlSZ+o9EWv5sA29RPeWDytRZDYvnBE/GXlCuJpAIRtU8mt+zJJd2uAA3oFrNI5zbJ4Oy4viUNoCSC9efS2aVAs2xZo9IAkO5hsM1n8WZIfWraOTfyOrTEe1+K52TYUG7ZbOXt6a4tFmGIx35xt5GfYx83pwoyOeLUkwjVL4LhyRPzBjp47Sq/9MEnkDSz1SW+I9SaAUKuz6nm1zQUqEbI5ewYAIbqq5I79cUmfyv3SNoMID8cchcxYPZg1j1iiq7O1utIEX5ogLC4oPx4Rn40IaA6sbggt/Ju0vbvaRNpXMFovIYk25foFr+Tnlgj0mqAbm1XcuJSiupHU6XQAAlen5HW6uKQ/L3QYbjLiCeZm75GEt600U7Ky4FNflxGkA8GT7StAbFpi2xJ9CQ3m+5s/WL7AiyQVU2gPUOtfvgXr+SURhNzL5YAPK6KU+/AMAMLMUfI8MaNkmaC25woQAvcRdct1Fs4KPDaoF45tuB3R+3pS68a+Al68jeiGkc9vHV4l9up8c1azXP/8cET8txluPWvfvHbWPBOAQPEtHbAvJYkBk+ss7jugE8/J/idbl9Jta4qcXMfqwSqMXiy3syubbVYRQpvXEVdevTi1zbYaQuOcrHiWtk0OkpJm21kAhH1v6ZB9aUn/tQAQliyCUuZkhKQia5o12x9bA30dCguXrMfRqFfttHRWIn1yUyF/YF3sKJhEjsRG8Jwk3MHl4ZyM/s/mbbeNY4J4npw9G4BAWkNFPGe1QzrUk3XMYOvs+GtK4uLziNlGaYSYgDGNVZaPM1iwrLcRtjkzsHVrhk/3PjPF4LNC5foJBwIx8NsYIFZ6RShSWQ0z2yRvKkniPheAfKmyn/0JSZ8sdBTuM2J/52J4Z36wsr3iNrl4QF3iJaHwQIIcJFS2RD3M6qwkT17mt4XfvFcSzIis2SZS8aQR61v3oxCxJkQjB/jabfrZAIT45ZJ+62VLN6y2ifMgjHYu9iuS0HPNdRKz4V9HBDerYxhghOPFTFs129QNFw63Oa5djLMSbmgGapfImW1mSGL+xzBczWyzaEeuv+aWSPXWkqDv594F6aNSxoHnAxBkYhATy9nlSrfNI3+QMT5q6xlI95S2DcyWhJqOZShlwC4omm3uFXAvoj5Zct1yHsBp8FRJ/6PxPCa5P4mI7x3pJUiMmc1Ia5vgo98ZqZ4pHgPlhAjYHEBYeVmBc/YCAMIsV1L5q12owXVB5mYuVtsu9qaq7nnXN0o6rTGYif1mySe3R48BFEQKqnHltqEFNTPI9lSIbpkk7l5yg4prAQ7xc2E440GE5Zt7l1oQ3AsBCMtoScniCpKIrso9eE4RZ8QYX6gUljninpq7Djx/RRUR2+zdWV2WoedUU9el7Rp1j6Hi+DlJ6AZnzTb1zCW7Fcze1xTGMTpm3Cvl7MUAhP1yaYknDBXXZw4gUIqrM2XnTHVQjAAewllhlaJGjip8U0Chs473ScqqHNqGqMlsOEb045slIYxXGlSsGHjKVrnkK24VqXRAQqOervve0qXmiFtszjuI88GJYiwiZMfBuUQg7Gn34TLEhxBMlRvHj4uIUr7MlwAQ9rYlwTAYntncF7ZZshCWG8PQSiXm5Dg2qW067qEjVFA7oF82caFGqOZYhB7kzdyH4DAOAXJVjheHdraLpGDI1cNugG86hhuWsFy+Ta6e2gXbkL48okGWJi3uj8aSbiU9NPSe3HuwerCK5OylAOQLC96Tw4WuUrr9tY0mFgLUqxqC0DgD4OUfZ7aJL+GMtGr47uMlZTvBNqsgq+GqhrucGTcbyTbV+YCXsA0QYVqvaugsI62TG1hjsHtxEP1AjmZvm8y+ePLGyJBFGC7qn7n3eHTlsvVlAIRgKBqTs6tJyl6e2WZPR/KSVQzBhFNLTMv0sf94BK3b2gyCyjlL+qr2JklFFRDbeJiIUBzDWGkvWlKbb9wOD6m/mJ/DNlvJ7N3CgAreL4lgu6zZRog6ewM+oA6KIuaQdXA07pBeAUCgMENCy9lJkpiNjphtlqysl2NA46tCbenQySyzyp6d5tS2PiSoL9JPBrxLMUtrEohGSWRMq4Ge+56mkmJHY14sKRsrYRt1EM6Nq9gXJJUm52PPHWmcIapOPsPcOOYOpJQT8ZUABHZmyVtxdUncmuYejH++GHTU0WtcUBLOy79ZSzlJxvjQP1NKsDniVpHMRdBvcn3Vm0O+o9vOLVJMbzfS4KWi10vKnjNtX5Gc70MaXChLxF9xi2ubMxV8wBIdqqcJaGZl+WMpT0ppB/EqAMJhr+QW/GlJ7y98dAZu9ma6p8VJ6KtIerN9ifQBxgjlvZKk7AxueyzSZa2OVfsq16XFLV1Sm8+65zu/zUGxt0rKsiVs/0TyOA585JHikDjxln6mMlGuet6pnaXgYcHHytmrAQgNK8U/XEMSEW+5WZFb1jsv2TtEKV6mwovC9crZZyxh6BrpElUTBI5XNVZD4rZzfYVsEhrFYxpZpbJk0aTGwplnVZuiDtr4LZG2ckw8Hjnep/di9fB711gUMHlLocavBSC1C58a+3UVvaQiN4Y3s127vKEIniJmnl4PRy0ykku76686kvh4lejLsepYbOZvScqGG4wIkDHqwBFzwBiv3bw/ShKMhqytGKtzb0ncs+Qmr9r293UAhFmvhMxrScoexGxDaagqnhTeFa8UJMis2HAKL+WyMKe0wqUS4GH//RXb3N8QD9ESNpti8E5Rx9wA8iIu4SA92uYMgXwQbtUcNR/WMyt96X6HVYSdB1vvoVbU/rJdkzR6PQDhAESGoZzVLoog/pESeqihxF3kC9mubUceLemIx8E2t6S3qzRkisE7RR1zAkhWtdF2jQn8a5KKjGTbeBvxOg418qOQdCe3gkAYJS49Z28AIDX/POkAsqLOtpkd7jmwpWyLoFFnEyfa5uY0G9CUcoVzg3xE/tQ2OQFZmUo2xeCdoo45ASTbHykrFytB6dx71ZKYhW34a1woD1XvhOh5dgEgpHM7qzBw3ghACIgiXXHOCPjJ0pptLxNg1Ap5haZx3UJbSMNMDEpuFiA5Ty1qb4rBO0UdcwLIt1W20WQ5ztLPyeEh6SalmW7Jifn+kp5TGDv3Y8teqO/NAKR2U127YCPME4WNIVZzGyPxWVI65P8nAKl0bqn9lvZNMXinqGNOAKl59TisM+4unZvvEiO6JBYCiRE1xCH2AElZEDS2bW8BIAy+kv4siQ3fUUAeS9YvDmglTE22V6VBzh4Rf3fOilQBCtuGZ3PHSlumGLxT1DEngPyypOIZ1TY39FnPElseSVmtqsSuGBr9+SBJzyqMY8ZwdvtF2jYAgqofjNacFdXPbQ+laLxAUhYAttkiAaCc25ZYDght2dDTpPDInUlNtGCKwTtFHXMCCB5HLgBLCpZcAHOeyAmeF0mMaUKENlJN23BoMD9YUvYgbptdELuhnL0VgHDjSp7vnN1IEgJxR8w2Sxb7t16rSa9wiYb3KmdFqnrqrJ5LuCkG7xR1zAkgtLXlleIcwnkkZ7XzLyTZbABU4VkPkYRAXG4cI9RRSv/wmwCkpgVV0zTl5N9M6L7Qou8riRg0BIRrh3Pub9irtiRvphi8U9QxN4CwivyoJAixucFZO6w/R1J2fNmGXJt9ZgEgNSIpnlg8sjl7GwCBo0QUV85qmqbs6Yj667FPSype8FToLnTwhRfT8i5WZrsWcL9YdIrBO0UdcwMI7X2spKy4nW0EJjhP5OxTknDfZ63BQj/8m6JyvW3OSVkxDxJCARB4MKUotxpDdUj+jDdIyi6lti+a9qK5jvhjScUENg0P3B4gPVNXvcwYVJOPSYL5WxroJSYHzpyLSCIQ7YjZRl+56A4+9INHSMoSEm0T1p0NCiMpFABBYRxNppzVNE2fGREP7vwGT5RE7G/uRWvnj9dKyt6QN2afw/VMMbtPUcfie40xeFufb4w6WruAmp5X7RwyJBz7kZKylPaGlOo7AEgtPLO2/69pmh7u+NtJIkQ3B5Aa3fhxkpBlyf2O1AtZB0Km+BSDd4o65ggQ2lyjLNUkl2ruWfh3vRrBWYoSDbONNywbTEVyKADygYggSUvOapqmQxBcC7yqkR6LvC3btRvQ/QryLXr4qjbGCkIb7iUpexBuXNQVmRe2h1wYPkZSVpq1EZT3LgBCQBR5BnN2K0kIxOVm8FaG0MXf1NIo1OIxaq7hIWJvU8zuU9Qx1xWkqOdlm4jFrKhbRNQCtoao0dR2IlwwZwUdIuIcAFLLk17TNB0yQDlsZUNrG2egse5hphi8U9QxV4A8U1I2xYBtIhazHLuIqOmZEepQlWNd6Kyaqg26CllJICgtAAT2bEl/qBgvPMDFSju/o5RptMEmRvEke4HYyC2332Jt1xbrGZKyKQZsQ2/PpiZAr0xS9hLbNoxeJFl7rOYkwgmUFZVDlAKAINpckrqvaZri2yb4pcdqAKlFNNZWsFbU4WK7ppjdp6hjritIMVrQdm0G/xNJWab5QICQ9i4rL2obbbesAwlBcwCCcl4pqWXN+zRkgNYAUotorAW61C549ivIdq0gd5KUTW1nm6sCrgxy9klJiEPkzsBwuL7WMzsj6yMpO5k3zkDvBSC1ROo1TdMhOSK+s5RIpkGWfLqkRxQ6CMGxrKBEpvwUs/sUdcx1BalJ2NYYGR+RlL2js036cYisPUb6iGyKg4ay5vsACBGD1y7Usqym6eHHQXM/Ii1KocYW7zckZbNY2SZ1NR2Ui13fryDbs4LAwv7uXCRo+v6EU1yvMP7eJSn7N9tEJBalgg49rzbRooaZTa4TEb8PQGpZS2uapiixZy/xMi9LsBO0+txSWWN0tiT4EZRA4a9lU8zuU9QxxxWkOMgTQGrpN14lKRvnMzCn5C9JQmI2N/7IcZO9yoiIDwCQWpjrspqmhxtSowzUkijynItJQj8493K9QfxTDN4p6pgjQGqibRBYs5GD6UVr2sA1itLhsXK6pGyWgIYX7YMApKbZVEvDVdM0PdzAmuxK7aqf59RkI9HsxRfeUn+fYvBOUcfcAIIblmC37GG6EazEu9YS38Akz0YJZubSZe9hPgRAajfZy2qaHm5jjduPemI2SU96yG9LOqW0h+qMbJxi8E5Rx9wAcoYkhNmy1jj/8pta2rwhqjrFdtjmjEvG5px9GICQy7s0AGtcqBrJ8HBltcPWtyeVRA7dOfsH0jNIysYNJLo8ruJc6ObB86YYvFPUMSeAIPF0iUqQHFnEPltJ9HNMObMiT1u74D48jp4lCYG4I2Yb+das6HhEfBSA1EJWa5qm7OkgLPYY3iYCn6A+5xpZOwdRvsjG5I+2W2CdYvBOUcecAFIMc03frHWPVtMFZlJlTPXqY9VEIJBvRcA8Zx8DIKAnK4LcYGEOlfSvebJq6nY0HE8HoZsl4QZ84gTWlLRfpxi8U9QxF4CgnXzBytmDgc3qUUo/znvWLonJnpXNW1MY6LUtfu2w/0cApBaZVTtc125Ac+28n6SsbKRt8pOQp6RmxdiANCNxECxts6YYvFPUMReAfEnShUsfs5GT49jnTNvqLBnR9tDJ+bmSsgIjtmtxRR8HIDApszkg0L2SlJVEsd2a9Q/3T+uwXYtL4VkohLOnJafhcdZxaTTF4J2ijrkAhHb+sKTPZ74VCXE4M9bSYP+epGKW2wb7I4fLWlwJqS9wVOXsEwCEHHDkgstZTdN0iJuNZ6Opi7JJlh7QmeTySAiubRRNyFBUzA+4V1ZsrM3lP68SMPUaScel6Ov8VrSmRnH6nqShNiSL7/MlZUUObXNTnxVHRP0RgHCLyG1izmrboiERfQfPrpHW8GJxIVhcmtND2BJyufjnKW0D9zHZPBkLLzTF7D5FHXNaQWgr7lMcOTC2uRTs+VZ4K7kczmot267J9JSg/kJJWZlc22hBZ1N3k24BgJCplIylOatpmt43IrKCwJX56hxJ1yn9vSGNv/Q0uF9Blu66VVaQZSstCizwQNsQVIuZcQuVvkgSAnFHzPbJEZEVaCerFQCBqFXanhxJ8n5Qg+2apmmtcy4tiZwkucaSZIUEKqtmtT387Clm9ynqmNsKMhQkSI7ircwGQtkeEma7WPdLJGVTddiGqJtN8QENBoDUyII1TdNlEysWPQpphqhl/Bna4Qflpxi8U9Sx6wApnnnT2Bhye77YV0UhbdvEQhETlbM/AyAEzGdT/UbEspptHVZ/AAAQbUlEQVSmtYHM7MAswWyRW0Wgr8P8zUnj7wFyXg9Msf2Zoo6DNyLLwBUkcYeSGxffn3YXLd5d7ucvk5RNF9hImf1pAIIIMGLAOatpmtbk61sD+UxJRdE526issNesJX1s1bH49ylm9ynq2NUVBIbFSaXMUmn1GJpNYLGvXi4pm8eykdXsMwCklt9vWU3T1uAlYeO/KwVRpQ6pOQ9azz/89ykG7xR17CpAXiepNElzMP+h5LUkTcYy9kpJ2ZTltmuRqX8BQIgVvkOh1odLyvKtGpqmPS/xakmleumUZbxkpXqnGLxT1LGrACleSKfJknuu03oGVaFMMYVG2q2gDZezzwKQWnamZTVNe9+lliSUGOKsGl7vwxfKTTF4p6hjVwFSG2fksCdmaRWrRSaeRGht4eGfAyAvj4js8hMRNbmWVqBTzwtxgUTOdLZc55pt2JpkJirK3/c8fA+Qgb10tPhUh3TyFV5e0j8eGgccyPlbKSNu7wseudU/+KHtGvHx8wCkls6qpmkKqADXqgYXjBv2Y1FnSYwBd95xNIUVK5lidp+ijl1dQXgvzsJo+B5LEW6bOzEUD1ssiZ6hUcsScJWIIIVfzr4AQGri0bXkJzVN055GL5aBqo78ECxOSGo1GvTQZ1N+isE7RR27DBDejXGAEAc8K8ZBjdA4ZBz8qiQE4o5YynFJCpCc/SUAIXkISURyVtM05YCdFQMb0vKJyk4xeKeoY9cBsq7h8HpJ2bs+2yT3+Uih4r8CIKSfKqXrraly1zRN1/Wiyz63Nni5zxnjUhIFjiNU/LRdqAljLPtOtfMBqc0gBq5qKBtmsy/ZvhRcpVUrmOj3b5SU9YLZJv0gaQhz9tcAhFzVDJKc1TRNh2YanagvstUUATJFoxrKMcs2oQiQZR845HczA8ibJGX5hrYRxybTc86+CEBIgZtlOuJmlYRA3BFraJoO6espyu4BMnIvzwwgb5GUDemwfbnkMc310N8AkOdFBMTDnNU0TWspfEf+HCs/bg+Qlbvw+AfMDCDFfO22SRILDyxnfwtAzia0tlDgaZKye1nbNU3TkT/Hyo/bA2TlLpw1QGqZqlCP/0She74EQAh6gtaRs5qmKUFW8KXmYHuAjPyVZraC1ETQyT/yyUL3fBmAPDsisooPEbFsZqCRP8fKj9sDZOUunPUKUgMIHsxPFbrnKwCklp+hpmlak2wc+XOs/LiamxeqAUIAq9q7D26BDz9oai+WbeSPSkmRhrznF0sU9BmtIFw+koa6lF2gJn37NQByZkQg4ZOzmp4Q1GPCdbP5O4Z8hQnKTnGJN0Udi101BU9qijrW+fmRijpZUsmNC6Wl5mz6OgAh/VUpeOmdkmBTZs020X+E7JKIcZttisE7RR17gPSPMuSlYIuXLgGPPakRMPgNAHI6obWFemHZIl8PEksggXlL2G5JGaX/ldZXcorBO0Ude4D0jRGEr8lJ8+FacdsXTwf0UpaybwKQZ0RENod1engxAeJB5YmeTujuKkEtfa++XKkpBu8UdewB0v7+XyWlm6QSQ/dg5YBKT4bnbA7EVM2xM8hTGrwdOPpUWFJ+OKgQBib05Cxrsv1eay0xxeCdoo49QOrDhJCJ60tCxrZots+fUh4gGlezcwBIz404SiSnSKpmlbUNSIhQhMi4TTbF4J2ijj1AyqOKMXoDSaXw2YOJ/HwRgTpn8WydqvhGRFwDgLD/IuTwSo0RTSDLjSSxLNXQiRIJgVTZ5IsbQs0Ug3eKOvYAyQ8gxuYNOyZwwEGAHoruNSPNxo0l/S7Cz5zk0cMl2y0+4ZqBKn7Y2m4BEgKxCMvdBpti8E5Rxx4gR0cTY5LdTWvi5loCoXbygdQMx9RNJIGHOAaQBBLkPtEohR/fQtepkkpyjQfP49nEEmQFuyZGzRSDd4o69gA5fuCcO9PXxlPaJSHSfpPGuEMw+6aSzlV7PxcgCSTEAYOc1naLhvGgYygrWZK7J94kq4s6IUimGLxT1LEHyHk9wEzPRF0Snj6YqDlCcKFdyoFz8ETAcXNJx+UKOQ4gCSSkM0MOnmD21lJ0s0W05QonkECpz8rPTwSSS0oiacsRs82s8sMjtAOdr1Luk1YOxmWqLyYkss1uYAxHyWclkcMy1281kt8y7zPkN4CDCbqUtuAAHNzRoanVusgmd80tJJHQ9jg7ApAEEoLlWWau1mg1qOPBb2+9XYNW3/r5qn+/uqSS9tGqz27+3jYSRgTmjGkfltSaxMas77hnNUSf11ZvRDDmmJirWlnpbu61jcRKtJMsyreUlM10mwVIAskFkmAXOrk1A30/W5ppFn/YYA6vs1OLGsPrrDT1I9tWhLqZzcY0BspFSqkCxqwo9yzbYwr79Ta3ONMfGmdcN3BxzRVGzQDHaZJKedLPO6QXOgFWKHuyVsISGn6rEgoPNb5GjuztqKHlEBcgKX02DfXQhw0pb/v+EXHWkN8MKFtMsjrgGYOLpvsucrz82OAfL/8DxhgzfSll87Enp7b1XFhzAX5rSXi2ilZcQQ5+kajT7M2usSoaF57Zorcs343lX95f0tCMWCu1w/ZFkzLghVZ6UPnHX4yIy0ji38nMNtQkvuFUxkzPBMwFX9Fsc72AFFXr/AU4biupGfDXBEhCJXmtOay1Ygx4kZ9roTI982kR8fCpejjtNdkKVmegsdqT7pY4x6G7tE5D9Ax6RdZBMHbFtjnwcvAde8tYamrXTJ/A0XNBTf6R20uChd60LoCkAU2STQYXKatq1o1O24hTs5edythiwV4m1h7G51rM9qkRQT6Li62lgqMPJW3dfQ67KMesO3nGHp1ih7rHzYptYCzdRhJ3GEVLntKXdlxM8/3vKInzSZcNelHbMCBZ5lokL14MlDLTVM32EyLisa1yI/8dagKzO1FmsD/HMPztPwKxc+K9+WLb/zRd9n4urZhjvBdufzxwcJeYJKcyZnq2QdxhtMDRcyENOO4sifNJtw0CCE9NTEhO/S2yFy8IWnG1tUDyuIh4fKvc/u8nTA8wdsiVTpxRCxw9F9GA426SXjG0BwcDJIGkl/TFi4JalLtbIGH5flKr3P7vO98DXdugtK16fkX08KCjEES/uySyGAy2pQCyAJI3d5C/eOG7SoIG3wLJIyLiqa1y+7/vbA8wVu4iqSmK3hA8XATHz5f0hXt6cWmAJJDAkMRV1iKB8eKguJlPxPZDIyKb9q3nhfZlZtsDzPRsg3rGSE3LbREc3BOxBVvaVgJIAkkvGYwOuKckaPCtlQQRCcQk9nZi9ABj4x6S8ES1xkZNpmrxt9W8h616Dv6+MkAWQNKjbkJHkEWIlAutjnhARNAZe9vtHhgyJmoKPIu9dD9JuNlXtlEAkkDCxVEPOYwOAd2oyrdAguIjyo97290e6KLL2Gbbzfa7ZQ+UNBq1ZzSALIAEj1WLJEZxLragwbdAgrA2s8GobW3Vu//7JD3QOwZw3ODAadlDJJ3RKjTk76MPukQWwwtRTAy/0MAufpRt8pfg0hu9vUM6a1921B7o/fa9bIuHSRqdH7aWAZdAwqVMT6baB0lqnjVskyaO7LdrafOon37/sFYP9H7zXpZFMc96qyGtv69tsCXyGJczd2o1AuE6SU2vlW3i26EVrK3dHW3dF1mtB3q/NfQjANKyYqry1g97/r7WgZZA0qtu8nBJzfsP2+Rnxx0ItXlv8+qB3m/cG4xVzMI8VresFSA0MlECcOuWUk0vvsujJDVv0m2jucWF0h4kY42E9T+n99sSAkEoRMuKCWZbPxzy97UDZAEkuHVL2XQX2/xYSU1Olm2CYqCvEF65t+3ugd5v2huIVcydOXY3TAKQBZCQD7GUMHTx3bqWzpRpF7fyHiRjj4zxnvcESU2mtu0HRUSPi7aYFnC8Jp/3pMkAclClbe407tPxMk+UBA2+aimZKBeUU0W4tZq0//t5PVBMI77YSbZ7WRPFjGfr6vTJAZJWE246ETNoWTP1QnoeObCJHSjleWjVs//7+D1QzJB8CBy9bIlnSWKVmdQ2ApA0qFlOe1746ZKat6i2Uc4j+mwPkkmHULayYvLXQ+CAJcG2u2XPlsQqM7ltDCAJJL3qJqdLavJwkkoi9Hto+HvbTA+cIamUsezcFg1gR5wtqZSmfO1vuFGAJJD0qpucKamUS3Gx428cEQT5E/W4t2l74CxJpYSwi9+olxXxAkk9Tp21veXGAZJA0su36f0A5H8gD8QeJGsbOkce/BxJzXPlADYEd2eERsD+3phtBUASSHp5N8XU1Iu9aBtRCcQlSLe1t/X2wPMkNT2TiQUB/ag17mBfEFy3UXDQZa2GrrdbDz3ddq+6CcxeqNLVDrSNPBEyRcgV7W09PUBIKzEdrW/Ry36AIUHo7cbBsXUASStJr7oJzN57tzrS9skpYeOUmk7rGYrb91SIo4gitMABqxvWQ4saRJgEog2TayiXunarVpCDRtruVTfp/UDXStKpe5CMBzK2SghxtMBB1mPE2lpsBxgRd9omcGzlCrIAkl51E5i97Fers45txLfJY4LO8N5W6wFWA6ScWn1OZCkyny1wcMmLUBw6altlW7mCLICkV92E4Cz2ra0PRhoH0jmQ1mFvy/UAqwFigK2+vmViN7QoQFzuIjG6deDY6hVkASS9PJ2u/attEgKRnYgEQXsb1gNw3pjpW+DoVYDnvgpxarSct9K2egVZAEkvX4flnH1sdTayfVICCanm9tbXA8g6IUje6tteyg/3VGR32lpwzGIFWQBJr7pJ137W9lWTwjvq5Xur9wD0HWb6FjhQ2GRVaPHhcL2TEId8Mltts1hBFkDSq27CvvZ2rdnJ9pVTRl/yCO4t3wPoL5MUqTrT24biQ9kWD45ETCQyIqXa1tusAEJvDlA36drf2r5CSr2Au5L/2F/3/NtTpvSsVX578MxVntH7W+p6Z2umt91L7cGLSC7yWYBjVlusxalmAJ+HfS6JGrd+Kd/6qbTQwETpYcvU4r3hGCF9M9l5Z2OzW0EWtlu96iaz2e/OZtSkhiYqD/nFW3y3d0bETSX9/dzecbYASdutXn4PuRVJITybpX3bB1Ki8NCvLZ7bORFxqqRvbvs75do3a4AkkPSqm5DKmsPhrJb4bRxUtnupO+8mwdJcwTHbM8jhQWO7l+/DLfot5rjUbwtQ0raKMIIWr+09EXGKpG9sS9uXacfsV5CFM8lpiffTojb8Qbrw+swyHXai/sb2RSLiYSkNdItb9d6IuKEksgnP2nYGIGm71cv/4SxCimr20J+OCA6PULH5jz4p/Vv7W+u3B39f5RlT/5b6OGNcKiKg6LQuAPkM74+IG0j6+qyRkRq/UwBJILl5Gvw9H3MXvuE2vcMHSA8u6Wvb1KhV2rJzAEkguWmSAGrd6q7Sd/vfHt8DH4yI60n66i51zE4CJIGkl/qwS99zU+/y4Yi4rqSvbKoB66p3ZwGSQHJKRLyl45Z3Xf17Ijz3oxFxHUlf3sWX3WmAJJDcIEkAtW57d/H7rvud/jAiTpb0d+uuaFPP33mAJJBcL0kAtW59N/Ud5lgvZw7uOb40x8b3tvmEAEgCyVVSYhYo7tyV9DBae8osw65d13OnaAvEz4+jFNOKD+kdhNtc7p8ABzuOSfaEvFcAAAAASUVORK5CYII=</icon>
+    <translations>
+        <translation locale="it">
+            <title>Campo Magnetico</title>
+            <category>Statistica</category>
+            <description>Calcola la media delle misure delle componenti del campo magnetico</description>
+            <string original="STRENGTH">MODULO</string>
+            <string original="Average B">B Medio</string>
+            <string original="Std. Err. B">Err. Std. B</string>
+            <string original="COMPONENTS">COMPONENTI</string>
+            <string original="VALUES">VALORI</string>
+        </translation>
+        <translation locale="fr">
+            <title>Champ Magnétique</title>
+            <category>Statistique</category>
+            <description>Calcule la moyenne des mesures des composantes du champ magnétique</description>
+            <string original="STRENGTH">MODULE</string>
+            <string original="Average B">B Moyenne</string>
+            <string original="COMPONENTS">COMPOSANTS</string>
+            <string original="VALUES">VALEURS</string>
+        </translation>
+    </translations>
+    <data-containers>
+        <container size="10000" static="false">Bz</container>
+        <container size="1000" static="false">Bzcounts</container>
+        <container size="1000" static="false">Bzbins</container>
+        <container size="10000" static="false">By</container>
+        <container size="1000" static="false">Bybins</container>
+        <container size="1000" static="false">Bycounts</container>
+        <container size="10000" static="false">Bx</container>
+        <container size="1000" static="false">Bxbins</container>
+        <container size="1000" static="false">Bxcounts</container>
+        <container size="10000" static="false">B</container>
+        <container size="1000" static="false">average</container>
+        <container size="1000" static="false">stddev</container>
+        <container size="1000" static="false">fieldBinning</container>
+        <container size="1000" static="false">fieldCount</container>
+        <container size="1000" static="false">aBz</container>
+        <container size="1000" static="false">aBy</container>
+        <container size="1000" static="false">sBy</container>
+        <container size="1000" static="false">aBx</container>
+        <container size="1000" static="false">sBx</container>
+        <container size="1000" static="false">sBz</container>
+        <container size="1000" static="false">integral</container>
+        <container size="1000" static="false">sqrtN</container>
+        <container size="1000" static="false">stdErr</container>
+    </data-containers>
+    <input>
+        <sensor editor:uuid="101" editor:posx="92.87155437469482" editor:posy="270.9618148803711" rate="0" average="false" type="magnetic_field">
+            <output component="x">Bx</output>
+            <output component="y">By</output>
+            <output component="z">Bz</output>
+            <output component="abs">B</output>
+        </sensor>
+    </input>
+    <output>
+    </output>
+    <analysis sleep="0"  onUserInput="false">
+        <binning editor:uuid="149" editor:posx="506.4548945426941" editor:posy="1241.9930953979492">
+            <input as="in" clear="false">B</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">fieldBinning</output>
+            <output as="binCounts">fieldCount</output>
+        </binning>
+        <average editor:uuid="150" editor:posx="523.0104246139526" editor:posy="653.8264007568359">
+            <input as="buffer" clear="false">Bz</input>
+            <output as="average">aBz</output>
+            <output as="stddev">sBz</output>
+        </average>
+        <binning editor:uuid="151" editor:posx="523.0972471237183" editor:posy="815.9548873901367">
+            <input as="in" clear="false">Bz</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">Bzbins</output>
+            <output as="binCounts">Bzcounts</output>
+        </binning>
+        <average editor:uuid="152" editor:posx="524.326418876648" editor:posy="1051.743064880371">
+            <input as="buffer" clear="false">B</input>
+            <output as="average">average</output>
+            <output as="stddev">stddev</output>
+        </average>
+        <binning editor:uuid="153" editor:posx="525.9513883590698" editor:posy="475.7777862548828">
+            <input as="in" clear="false">By</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">Bybins</output>
+            <output as="binCounts">Bycounts</output>
+        </binning>
+        <average editor:uuid="154" editor:posx="527.4305753707886" editor:posy="192.51043128967285">
+            <input as="buffer" clear="false">Bx</input>
+            <output as="average">aBx</output>
+            <output as="stddev">sBx</output>
+        </average>
+        <binning editor:uuid="155" editor:posx="529.7326536178589" editor:posy="27.11111068725586">
+            <input as="in" clear="false">Bx</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">Bxbins</output>
+            <output as="binCounts">Bxcounts</output>
+        </binning>
+        <average editor:uuid="156" editor:posx="534.3819913864136" editor:posy="339.94445037841797">
+            <input as="buffer" clear="false">By</input>
+            <output as="average">aBy</output>
+            <output as="stddev">sBy</output>
+        </average>
+        <integrate editor:uuid="157" editor:posx="855.2534818649292" editor:posy="1564.9063034057617">
+            <input as="in" clear="false">fieldCount</input>
+            <output as="out">integral</output>
+        </integrate>
+        <power editor:uuid="158" editor:posx="1123.545199394226" editor:posy="1413.2847518920898">
+            <input as="base" clear="false">integral</input>
+            <input as="exponent" type="value">0.5</input>
+            <output as="power">sqrtN</output>
+        </power>
+        <divide editor:uuid="159" editor:posx="1392.951434135437" editor:posy="1257.3090591430664">
+            <input as="dividend" clear="false">stddev</input>
+            <input as="divisor" clear="false">sqrtN</input>
+            <output as="quotient">stdErr</output>
+        </divide>
+    </analysis>
+    <views>
+        <view label="STRENGTH">
+            <value editor:uuid="166" editor:posx="1119.437533378601" editor:posy="1564.6666793823242" label="N" size="1" precision="0" scientific="false"  factor="1" >
+                <input>integral</input>
+            </value>
+            <value editor:uuid="167" editor:posx="841.7118253707886" editor:posy="1054.163200378418" label="Average B" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>average</input>
+            </value>
+            <value editor:uuid="168" editor:posx="839.6806058883667" editor:posy="1267.975715637207" label="Dev. Std. B" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>stddev</input>
+            </value>
+            <value editor:uuid="169" editor:posx="1625.989598274231" editor:posy="1261.1389083862305" label="Std. Err. B" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>stdErr</input>
+            </value>
+            <graph editor:uuid="170" editor:posx="851.4652891159058" editor:posy="1380.3159713745117" label="B" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="a" labelY="" labelZ="" unitX="μT" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">fieldBinning</input>
+                <input axis="y">fieldCount</input>
+            </graph>
+        </view>
+        <view label="COMPONENTS">
+            <graph editor:uuid="171" editor:posx="912.3159971237183" editor:posy="30.211814880371094" label="Bx" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="Bx" labelY="" labelZ="" unitX="μT" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">Bxbins</input>
+                <input axis="y">Bxcounts</input>
+            </graph>
+            <graph editor:uuid="172" editor:posx="804.6597623825073" editor:posy="465.60070037841797" label="By" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="By" labelY="" labelZ="" unitX="μT" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">Bybins</input>
+                <input axis="y">Bycounts</input>
+            </graph>
+            <graph editor:uuid="173" editor:posx="844.0868635177612" editor:posy="809.9549179077148" label="Bz" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="Bz" labelY="" labelZ="μT" unitX="" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">Bzbins</input>
+                <input axis="y">Bzcounts</input>
+            </graph>
+        </view>
+        <view label="VALUES">
+            <value editor:uuid="174" editor:posx="784.3680753707886" editor:posy="176.96875095367432" label="〈 Bx〉" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>aBx</input>
+            </value>
+            <value editor:uuid="175" editor:posx="781.5174283981323" editor:posy="270.8194742202759" label="σ(Bx)" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>sBx</input>
+            </value>
+            <value editor:uuid="176" editor:posx="1032.6459074020386" editor:posy="342.0208511352539" label="〈 By〉" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>aBy</input>
+            </value>
+            <value editor:uuid="177" editor:posx="1033.1597623825073" editor:posy="429.97571563720703" label="σ(By)" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>sBy</input>
+            </value>
+            <value editor:uuid="178" editor:posx="860.2395963668823" editor:posy="607.4097290039062" label="〈 Bz〉" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>aBz</input>
+            </value>
+            <value editor:uuid="179" editor:posx="858.2258024215698" editor:posy="695.2361221313477" label="σ(Bz)" size="1" precision="4" scientific="false" unit="μT" factor="1" >
+                <input>sBz</input>
+            </value>
+            <value editor:uuid="180" editor:posx="1125.0520963668823" editor:posy="1681.722282409668" label="N" size="1" precision="0" scientific="false"  factor="1" >
+                <input>integral</input>
+            </value>
+        </view>
+    </views>
+    <export>
+    </export>
+</phyphox>

@@ -1,0 +1,190 @@
+<phyphox xmlns="http://phyphox.org/xml" xmlns:editor="http://phyphox.org/editor/xml" version="1.7" editor:version="1.0" locale="en">
+    <title>Average Acceleration</title>
+    <category>Statistics</category>
+    <description>Take the average over measurements of the acceleration components</description>
+    <icon format="base64">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</icon>
+    <translations>
+        <translation locale="it">
+            <title>Accelerazione Media</title>
+            <category>Statistica</category>
+            <description>Calcola la media delle misurazioni delle componenti dell'accelerazione</description>
+            <string original="STRENGTH">MODULO</string>
+            <string original="Average Acc.">Acc. Media</string>
+            <string original="Dev. Std. Acc.">Dev. Std. Acc.</string>
+            <string original="Acceleration">Accelerazione</string>
+            <string original="COMPONENTS">COMPONENTI</string>
+            <string original="Acceleration x">Accelerazione x</string>
+            <string original="Acceleration y">Accelerazione y</string>
+            <string original="Acceleration z">Accelerazione z</string>
+            <string original="NUMERIC">VALORI</string>
+        </translation>
+        <translation locale="fr">
+            <title>Accélération moyenne</title>
+            <category>Statistique</category>
+            <description>Calcule la moyenne des mesures des composantes de l'accélération.</description>
+            <string original="STRENGTH">MODULE</string>
+            <string original="Average Acc.">Acc. Moyenne</string>
+            <string original="Dev. Std. Acc.">Dev. Std. Acc.</string>
+            <string original="Acceleration">Accélération</string>
+            <string original="COMPONENTS">COMPOSANTS</string>
+            <string original="Acceleration x">Accélération x</string>
+            <string original="Acceleration y">Accélération y</string>
+            <string original="Acceleration z">Accélération z</string>
+            <string original="NUMERIC">VALEURS</string>
+        </translation>
+    </translations>
+    <data-containers>
+        <container size="10000" static="false">az</container>
+        <container size="1000" static="false">azcounts</container>
+        <container size="1000" static="false">azbins</container>
+        <container size="10000" static="false">ay</container>
+        <container size="1000" static="false">aybins</container>
+        <container size="1000" static="false">aycounts</container>
+        <container size="10000" static="false">ax</container>
+        <container size="1000" static="false">axbins</container>
+        <container size="1000" static="false">axcounts</container>
+        <container size="10000" static="false">a</container>
+        <container size="1000" static="false">average</container>
+        <container size="1000" static="false">stddev</container>
+        <container size="1000" static="false">accelerationBinning</container>
+        <container size="1000" static="false">accelerationCount</container>
+        <container size="1000" static="false">aaz</container>
+        <container size="1000" static="false">aay</container>
+        <container size="1000" static="false">say</container>
+        <container size="1000" static="false">aax</container>
+        <container size="1000" static="false">sax</container>
+        <container size="1000" static="false">saz</container>
+        <container size="1000" static="false">integral</container>
+        <container size="1000" static="false">sqrtN</container>
+        <container size="1000" static="false">stdErr</container>
+    </data-containers>
+    <input>
+        <sensor editor:uuid="101" editor:posx="92.87155437469482" editor:posy="270.9618148803711" rate="0" average="false" type="accelerometer">
+            <output component="x">ax</output>
+            <output component="y">ay</output>
+            <output component="z">az</output>
+            <output component="abs">a</output>
+        </sensor>
+    </input>
+    <output>
+    </output>
+    <analysis sleep="0"  onUserInput="false">
+        <binning editor:uuid="149" editor:posx="506.4548945426941" editor:posy="1241.9930953979492">
+            <input as="in" clear="false">a</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">accelerationBinning</output>
+            <output as="binCounts">accelerationCount</output>
+        </binning>
+        <average editor:uuid="150" editor:posx="523.0104246139526" editor:posy="653.8264007568359">
+            <input as="buffer" clear="false">az</input>
+            <output as="average">aaz</output>
+            <output as="stddev">saz</output>
+        </average>
+        <binning editor:uuid="151" editor:posx="523.0972471237183" editor:posy="815.9548873901367">
+            <input as="in" clear="false">az</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">azbins</output>
+            <output as="binCounts">azcounts</output>
+        </binning>
+        <average editor:uuid="152" editor:posx="524.326418876648" editor:posy="1051.743064880371">
+            <input as="buffer" clear="false">a</input>
+            <output as="average">average</output>
+            <output as="stddev">stddev</output>
+        </average>
+        <binning editor:uuid="153" editor:posx="525.9513883590698" editor:posy="475.7777862548828">
+            <input as="in" clear="false">ay</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">aybins</output>
+            <output as="binCounts">aycounts</output>
+        </binning>
+        <average editor:uuid="154" editor:posx="527.4305753707886" editor:posy="192.51043128967285">
+            <input as="buffer" clear="false">ax</input>
+            <output as="average">aax</output>
+            <output as="stddev">sax</output>
+        </average>
+        <binning editor:uuid="155" editor:posx="529.7326536178589" editor:posy="27.11111068725586">
+            <input as="in" clear="false">ax</input>
+            <input as="dx" type="value">0.01</input>
+            <output as="binStarts">axbins</output>
+            <output as="binCounts">axcounts</output>
+        </binning>
+        <average editor:uuid="156" editor:posx="534.3819913864136" editor:posy="339.94445037841797">
+            <input as="buffer" clear="false">ay</input>
+            <output as="average">aay</output>
+            <output as="stddev">say</output>
+        </average>
+        <integrate editor:uuid="157" editor:posx="855.2534818649292" editor:posy="1564.9063034057617">
+            <input as="in" clear="false">accelerationCount</input>
+            <output as="out">integral</output>
+        </integrate>
+        <power editor:uuid="158" editor:posx="1123.545199394226" editor:posy="1413.2847518920898">
+            <input as="base" clear="false">integral</input>
+            <input as="exponent" type="value">0.5</input>
+            <output as="power">sqrtN</output>
+        </power>
+        <divide editor:uuid="159" editor:posx="1392.951434135437" editor:posy="1257.3090591430664">
+            <input as="dividend" clear="false">stddev</input>
+            <input as="divisor" clear="false">sqrtN</input>
+            <output as="quotient">stdErr</output>
+        </divide>
+    </analysis>
+    <views>
+        <view label="STRENGTH">
+            <value editor:uuid="166" editor:posx="1119.437533378601" editor:posy="1564.6666793823242" label="N" size="1" precision="0" scientific="false"  factor="1" >
+                <input>integral</input>
+            </value>
+            <value editor:uuid="167" editor:posx="841.7118253707886" editor:posy="1054.163200378418" label="Average Acc." size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>average</input>
+            </value>
+            <value editor:uuid="168" editor:posx="839.6806058883667" editor:posy="1267.975715637207" label="Dev. Std. Acc." size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>stddev</input>
+            </value>
+            <value editor:uuid="169" editor:posx="1625.989598274231" editor:posy="1261.1389083862305" label="Std. Err. Acc." size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>stdErr</input>
+            </value>
+            <graph editor:uuid="170" editor:posx="851.4652891159058" editor:posy="1380.3159713745117" label="Acceleration" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="a" labelY="" labelZ="" unitX="m/s²" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">accelerationBinning</input>
+                <input axis="y">accelerationCount</input>
+            </graph>
+        </view>
+        <view label="COMPONENTS">
+            <graph editor:uuid="171" editor:posx="912.3159971237183" editor:posy="30.211814880371094" label="Acceleration x" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="ax" labelY="" labelZ="" unitX="m/s²" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">axbins</input>
+                <input axis="y">axcounts</input>
+            </graph>
+            <graph editor:uuid="172" editor:posx="804.6597623825073" editor:posy="465.60070037841797" label="Acceleration y" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="ay" labelY="" labelZ="" unitX="m/s²" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">aybins</input>
+                <input axis="y">aycounts</input>
+            </graph>
+            <graph editor:uuid="173" editor:posx="844.0868635177612" editor:posy="809.9549179077148" label="Acceleration z" aspectRatio="2.5" style="vbars" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="az" labelY="" labelZ="m/s²" unitX="" unitY="" unitZ="" logX="false" logY="false" logZ="false" xPrecision="3" yPrecision="1" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0"  mapWidth="0"       >
+                <input axis="x">azbins</input>
+                <input axis="y">azcounts</input>
+            </graph>
+        </view>
+        <view label="NUMERIC">
+            <value editor:uuid="174" editor:posx="784.3680753707886" editor:posy="176.96875095367432" label="〈 ax〉" size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>aax</input>
+            </value>
+            <value editor:uuid="175" editor:posx="781.5174283981323" editor:posy="270.8194742202759" label="σ(ax)" size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>sax</input>
+            </value>
+            <value editor:uuid="176" editor:posx="1032.6459074020386" editor:posy="342.0208511352539" label="〈 ay〉" size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>aay</input>
+            </value>
+            <value editor:uuid="177" editor:posx="1033.1597623825073" editor:posy="429.97571563720703" label="σ(ay)" size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>say</input>
+            </value>
+            <value editor:uuid="178" editor:posx="860.2395963668823" editor:posy="607.4097290039062" label="〈 az〉" size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>aaz</input>
+            </value>
+            <value editor:uuid="179" editor:posx="858.2258024215698" editor:posy="695.2361221313477" label="σ(az)" size="1" precision="4" scientific="false" unit="m/s²" factor="1" >
+                <input>saz</input>
+            </value>
+            <value editor:uuid="180" editor:posx="1125.0520963668823" editor:posy="1681.722282409668" label="N" size="1" precision="0" scientific="false"  factor="1" >
+                <input>integral</input>
+            </value>
+        </view>
+    </views>
+    <export>
+    </export>
+</phyphox>

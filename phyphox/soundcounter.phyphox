@@ -1,0 +1,291 @@
+<phyphox version="1.6" locale="en">
+    <title>Sound counter</title>
+    <category>Tools</category>
+    <description>This tool counts the number of sound events per time interval.</description>
+    <icon format="base64">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</icon>
+    <translations>
+        <translation locale="it">
+            <title>Contatore sonoro</title>
+            <description>Questo strumento misura il numero di eventi sonori per intervallo di tempo.</description>
+            <string original="Time interval">Intervallo di tempo</string>
+            <string original="Sound threshold">Soglia acustica</string>
+            <string original="Sound monitor">Livello sonoro</string>
+            <string original="time">tempo</string>
+            <string original="sound intensity">intensità sonora</string>
+            <string original="Events">Eventi</string>
+            <string original="Choose a time interval and a sound threshold. The experiment will count the number of sound events above the chosen threshold in time intervals whose duration is dt">Scegli un intervallo di tempo dt e una soglia. L'esperimento misurerà il numero di eventi acustici sopra soglia per ogni intervallo di durata dt.</string>
+            <string original="Results">Risultati</string>
+        </translation>
+    </translations>
+    <data-containers>
+        <container size="1000" static="false">out</container>
+        <container size="1000" static="false">dt1</container>
+        <container size="1000" static="false">threshold</container>
+        <container size="1000" static="false">t</container>
+        <container size="1000" static="false">position</container>
+        <container size="1000" static="false">count1</container>
+        <container size="1000" static="false">count2</container>
+        <container size="1000" static="false">count3</container>
+        <container size="1000" static="false">count4</container>
+        <container size="1000" static="false">count5</container>
+        <container size="1000" static="false">count6</container>
+        <container size="1000" static="false">count7</container>
+        <container size="1000" static="false">sum</container>
+        <container size="1000" static="false">rate</container>
+        <container size="1000" static="false">quotient</container>
+        <container size="1000" static="false">soundIntensity</container>
+        <container size="1000" static="false">max</container>
+        <container size="1000" static="false">ifResult</container>
+        <container size="1000" static="false">ifResult1</container>
+        <container size="1000" static="false">ifResult2</container>
+        <container size="1000" static="false">ifResult3</container>
+        <container size="1000" static="false">ifResult4</container>
+        <container size="1000" static="false">ifResult5</container>
+        <container size="1000" static="false">ifResult6</container>
+        <container size="1000" static="false">ifResult7</container>
+        <container size="1000" static="false">result1</container>
+        <container size="1000" static="false">result2</container>
+        <container size="1000" static="false">result3</container>
+        <container size="1000" static="false">result4</container>
+        <container size="1000" static="false">result5</container>
+        <container size="1000" static="false">result6</container>
+        <container size="1000" static="false">result7</container>
+        <container size="1000" static="false">dt2</container>
+        <container size="1000" static="false">dt3</container>
+        <container size="1000" static="false">dt4</container>
+        <container size="1000" static="false">dt5</container>
+        <container size="1000" static="false">dt6</container>
+        <container size="1000" static="false">dt7</container>
+        <container size="1000" static="false">n2</container>
+        <container size="1000" static="false">n3</container>
+        <container size="1000" static="false">n4</container>
+        <container size="1000" static="false">n5</container>
+        <container size="1000" static="false">n6</container>
+        <container size="1000" static="false">n7</container>
+    </data-containers>
+    <input>
+        <audio rate="48000">
+            <output component="out">out</output>
+            <output component="rate">rate</output>
+        </audio>
+    </input>
+    <output>
+    </output>
+    <analysis sleep="0"  onUserInput="false">
+        <multiply>
+            <input as="factor" clear="false">dt1</input>
+            <input as="factor" type="value">2</input>
+            <output as="product">dt2</output>
+        </multiply>
+        <multiply>
+            <input as="factor" clear="false">dt1</input>
+            <input as="factor" type="value">3</input>
+            <output as="product">dt3</output>
+        </multiply>
+        <multiply>
+            <input as="factor" clear="false">dt1</input>
+            <input as="factor" type="value">4</input>
+            <output as="product">dt4</output>
+        </multiply>
+        <multiply>
+            <input as="factor" clear="false">dt1</input>
+            <input as="factor" type="value">5</input>
+            <output as="product">dt5</output>
+        </multiply>
+        <multiply>
+            <input as="factor" clear="false">dt1</input>
+            <input as="factor" type="value">6</input>
+            <output as="product">dt6</output>
+        </multiply>
+        <multiply>
+            <input as="factor" clear="false">dt1</input>
+            <input as="factor" type="value">7</input>
+            <output as="product">dt7</output>
+        </multiply>
+        <timer>
+            <output as="out">t</output>
+        </timer>
+        <abs>
+            <input as="value" clear="false">out</input>
+            <output as="abs">soundIntensity</output>
+        </abs>
+        <max multiple="false">
+            <input as="y" clear="false">soundIntensity</input>
+            <output as="max">max</output>
+        </max>
+        <if less="false" equal="false" greater="true">
+            <input as="a" clear="false">max</input>
+            <input as="b" clear="false">threshold</input>
+            <input as="true" clear="false">t</input>
+            <output as="result" clear="false">ifResult</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt1</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result1</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt2</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result2</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt3</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result3</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt4</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result4</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt5</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result5</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt6</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result6</output>
+        </if>
+        <if less="true" equal="false" greater="false">
+            <input as="a" clear="false">t</input>
+            <input as="b" clear="false">dt7</input>
+            <input as="true" clear="false">ifResult</input>
+            <output as="result">result7</output>
+        </if>
+        <count>
+            <input as="buffer" clear="false">result1</input>
+            <output as="count">count1</output>
+        </count>
+        <count>
+            <input as="buffer" clear="false">result2</input>
+            <output as="count">count2</output>
+        </count>
+        <count>
+            <input as="buffer" clear="false">result3</input>
+            <output as="count">count3</output>
+        </count>
+        <count>
+            <input as="buffer" clear="false">result4</input>
+            <output as="count">count4</output>
+        </count>
+        <count>
+            <input as="buffer" clear="false">result5</input>
+            <output as="count">count5</output>
+        </count>
+        <count>
+            <input as="buffer" clear="false">result6</input>
+            <output as="count">count6</output>
+        </count>
+        <count>
+            <input as="buffer" clear="false">result7</input>
+            <output as="count">count7</output>
+        </count>
+        <subtract>
+            <input as="minuend" clear="false">count2</input>
+            <input as="subtrahend" clear="false">count1</input>
+            <output as="difference">n2</output>
+        </subtract>
+        <subtract>
+            <input as="minuend" clear="false">count3</input>
+            <input as="subtrahend" clear="false">count2</input>
+            <output as="difference">n3</output>
+        </subtract>
+        <subtract>
+            <input as="minuend" clear="false">count4</input>
+            <input as="subtrahend" clear="false">count3</input>
+            <output as="difference">n4</output>
+        </subtract>
+        <subtract>
+            <input as="minuend" clear="false">count5</input>
+            <input as="subtrahend" clear="false">count4</input>
+            <output as="difference">n5</output>
+        </subtract>
+        <subtract>
+            <input as="minuend" clear="false">count6</input>
+            <input as="subtrahend" clear="false">count5</input>
+            <output as="difference">n6</output>
+        </subtract>
+        <subtract>
+            <input as="minuend" clear="false">count7</input>
+            <input as="subtrahend" clear="false">count6</input>
+            <output as="difference">n7</output>
+        </subtract>
+    </analysis>
+    <views>
+        <view label="Configuration">
+            <edit label="Time interval" signed="false" decimal="true"   unit="s" factor="1" default="1">
+                <output>dt1</output>
+            </edit>
+            <edit label="Sound threshold" signed="false" decimal="true"   unit="a.u." factor="1" default="0.1">
+                <output>threshold</output>
+            </edit>
+            <graph label="Sound monitor" aspectRatio="2.5" style="lines" lineWidth="1" color="ff7e22" partialUpdate="false" history="1" labelX="time" labelY="sound intensity" logX="false" logY="false" xPrecision="3" yPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" minX="0" maxX="0" minY="0" maxY="0">
+                <input axis="y">out</input>
+            </graph>
+            <value label="Events" size="1" precision="2" scientific="false" unit="" factor="1">
+                <input>count7</input>
+            </value>
+            <separator height="1" color="404040">
+            </separator>
+            <info label="Choose a time interval and a sound threshold. The experiment will count the number of sound events above the chosen threshold in time intervals whose duration is dt">
+            </info>
+        </view>
+        <view label="Results">
+            <value label="N1" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>count1</input>
+            </value>
+            <value label="N2" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>n2</input>
+            </value>
+            <value label="N3" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>n3</input>
+            </value>
+            <value label="N4" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>n4</input>
+            </value>
+            <value label="N5" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>n5</input>
+            </value>
+            <value label="N6" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>n6</input>
+            </value>
+            <value label="N7" size="1" precision="0" scientific="false" unit="" factor="1">
+                <input>n7</input>
+            </value>
+            <button label="Reset">
+                <input type="value">0</input>
+                <output>count1</output>
+                <input type="value">0</input>
+                <output>count2</output>
+                <input type="value">0</input>
+                <output>count3</output>
+                <input type="value">0</input>
+                <output>count4</output>
+                <input type="value">0</input>
+                <output>count5</output>
+                <input type="value">0</input>
+                <output>count6</output>
+                <input type="value">0</input>
+                <output>count7</output>
+            </button>
+        </view>
+    </views>
+    <export>
+        <set name="tData">
+            <data name="tArray">ifResult</data>
+        </set>
+        <set name="Configuration">
+            <data name="dt">dt1</data>
+            <data name="Threshold">threshold</data>
+        </set>
+    </export>
+</phyphox>
