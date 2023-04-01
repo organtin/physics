@@ -6,4 +6,4 @@ f = open('illuminance.csv', 'w')
 while True:
     arduinoReading = usb.readline().rstrip()
     print(arduinoReading.decode())
-    w.write('{}, {}'.format(time.time(), arduinoReading.decode()))
+    f.write('{}, {}'.format(time.time(), arduinoReading.decode()))
