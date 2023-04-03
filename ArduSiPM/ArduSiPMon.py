@@ -136,7 +136,7 @@ def createplot():
     px = 1/plt.rcParams['figure.dpi'] 
     fig = plt.figure(figsize = (1024*px, 480*px))
     fig.suptitle('ArduSiPM monitor', fontsize = 16, fontweight = 'bold')
-    fig.canvas.set_window_title('ArduSiPMonitor v1.0')
+    fig.canvas.manager.set_window_title('ArduSiPMonitor v1.0')
     text = fig.text(.5, .91, 'Copyright \u00a9 2022 by giovanni.organtini@roma1.infn.it',
                     {'horizontalalignment': 'center', 'size': 8})
                  
@@ -247,6 +247,7 @@ for o, a in opts:
 # open data file
 f = open(filename, 'w')
 f.write('n,number of events,events\n')
+master = None
 
 if not simulation:
     # open serial port
