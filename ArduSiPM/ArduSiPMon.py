@@ -108,8 +108,13 @@ def simulate(master, nevts = 3, delay = .1):
         fk += f't{t[i]}v{v[i]}'
     fk += f'${evts}'
     ser.write(bytes(fk, 'utf-8'))
-    s = os.read(master, 1000).decode()
-    time.sleep(delay)
+    try:
+        s = os.read(master, 1000).decode()
+        time.sleep(delay)
+    except KeyboardInterrupt:
+        print("Keyboard interrupt")
+        f.close()
+        exit(0)
     return s
 
 def plot(histo, hT, hV, axn, axv, axt):
@@ -129,7 +134,12 @@ def plot(histo, hT, hV, axn, axv, axt):
     axt.hist(hT, rwidth = .9, color = 'red')
     axt.set_xlabel('Time of arrival [$\\mu$s]')
     clear_output(wait = True)
-    plt.pause(.01)    
+    try:
+        plt.pause(.01)
+    except KeyboardInterrupt:
+        print("Keyboard interrupt")
+        f.close()
+        exit(0)
 
 def createplot():
     # create figure and subplot
