@@ -34,28 +34,29 @@ void setup() {
     arr[i] = 0;
   }
 }
+
+void debug(float x, float y, int ix, int iy) {
+  Serial.print(x);
+  Serial.print(", ");
+  Serial.print(y);
+  Serial.print(" --> ");
+  Serial.print(ix);
+  Serial.print(", ");
+  Serial.print(iy);
+  Serial.println();
+}
   
 /* the following function returns the index of an LED on the Arduino V4
    LED matrix, given the cartesian coordinates (x,y). Coordinates are
    scaled such that one corner corresponds to (xm, xM), and the opposite
    to (ym, yM) */ 
 int ledno(float x, float y, float xm = 0., float xM = 1., float ym = 0., float yM = 1.) {
+  int ix = (int)(round((x - xm) * 12./(xM-xm))) % 12;
+  int iy = (int)(round((y - ym) * 8./(yM - ym)));
+  int index = (int)(12 * iy + ix);
 #ifdef _DEBUG
-  Serial.print(x);
-  Serial.print(", ");
-  Serial.print(y);
-  Serial.print(" --> ");
+  debug(x, y, ix, iy);
 #endif
-  x = round((x - xm) * 12./(xM-xm));
-  y = round((y - ym) * 8./(yM - ym));
-  int ix = (int)x % 12;
-#ifdef _DEBUG
-  Serial.print(ix);
-  Serial.print(" ");
-  Serial.print(y);
-  Serial.println(" ");
-#endif
-  int index = (int)(12 * y + ix);
   arr[index] = 1;
   return index;
 }
@@ -76,8 +77,26 @@ void plot(float x) {
 #endif
 }
 
-void loop(){
+void poly(float x, int degree, float* a) {
+  float y = 0;
+  for (int i = 0; i < degree + 1; i++) {
+    y += a[i]*pow(x, i);
+  }
+  matrix.on(ledno(x, y));
+#ifdef _PERSIST
+  matrix.loadPixels(arr, 96);
+#endif
+}
+
+void loop() {
   x += dx;
-  corners();
-  plot(x);
+  //corners();
+  //plot(x);
+  float a[3] = {0., 0., 1.};
+  poly(x, 2, a);
+  if (x >= 1) {
+    while (1) {
+      // do nothing
+    }
+  }
 }
