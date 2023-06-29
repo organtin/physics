@@ -77,26 +77,51 @@ void plot(float x) {
 #endif
 }
 
-void poly(float x, int degree, float* a) {
+void poly(float x, int degree, float* a, float xm = 0., 
+          float xM = 1., float ym = 0., float yM = 1.) {
   float y = 0;
   for (int i = 0; i < degree + 1; i++) {
     y += a[i]*pow(x, i);
   }
-  matrix.on(ledno(x, y));
+  matrix.on(ledno(x, y, xm, xM, ym, yM));
 #ifdef _PERSIST
   matrix.loadPixels(arr, 96);
 #endif
+}
+
+void clear() {
+  for (int i = 0; i < 96; i++) {
+    arr[i] = {0};
+  }
+  matrix.loadPixels(arr, 96);
+}
+
+void show() {
+  for (int n = 0; n < 7; n++) {
+    x = -1;
+    while (x < 1) {
+      float a[7] = {0.};
+      if (n > 0) {
+        a[n] = 1.;
+      }
+      poly(x, n, a, -1, 1, -1, 1);
+      x += dx;
+    }
+    delay(200);
+    clear();
+  }
 }
 
 void loop() {
   x += dx;
   //corners();
   //plot(x);
-  float a[3] = {0., 0., 1.};
-  poly(x, 2, a);
-  if (x >= 1) {
-    while (1) {
-      // do nothing
-    }
-  }
+  //float a[3] = {0., 0., 1.};
+  //poly(x, 2, a);
+  //if (x >= 1) {
+  //  while (1) {
+  //    // do nothing
+  //  }
+  //}
+  show();
 }
