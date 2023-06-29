@@ -51,9 +51,13 @@ void debug(float x, float y, int ix, int iy) {
    scaled such that one corner corresponds to (xm, xM), and the opposite
    to (ym, yM) */ 
 int ledno(float x, float y, float xm = 0., float xM = 1., float ym = 0., float yM = 1.) {
-  int ix = (int)(round((x - xm) * 12./(xM-xm))) % 12;
-  int iy = (int)(round((y - ym) * 8./(yM - ym)));
-  int index = (int)(12 * iy + ix);
+  float a = 11./(xM-xm);
+  float b = -a*xm;
+  int ix = (int)round(a*x + b);
+  a = 7./(ym-yM);
+  b = -a*yM;
+  int iy = (int)round(a*y + b);
+  int index = (int)(iy*12 + ix);
 #ifdef _DEBUG
   debug(x, y, ix, iy);
 #endif
@@ -63,18 +67,23 @@ int ledno(float x, float y, float xm = 0., float xM = 1., float ym = 0., float y
 
 void corners() {
   matrix.on(ledno(0, 0));
-  matrix.on(ledno(0,.9));
-  matrix.on(ledno(.9,0));
-  matrix.on(ledno(.9,.9));
+  matrix.on(ledno(0,1));
+  matrix.on(ledno(1,0));
+  matrix.on(ledno(1,1));
 }
 
 #define _PERSIST
 
 void plot(float x) {
-  matrix.on(ledno(x, sin(2*PI*x), 0, 1, -1, 1));
+  matrix.on(ledno(x, sin(x), 0, 2.*PI, -1, 1));
 #ifdef _PERSIST
   matrix.loadPixels(arr, 96);
 #endif
+  if (x > 2.*PI) {
+    while (1) {
+      // do nothing
+    }
+  }
 }
 
 void poly(float x, int degree, float* a, float xm = 0., 
@@ -116,12 +125,12 @@ void loop() {
   x += dx;
   //corners();
   //plot(x);
-  //float a[3] = {0., 0., 1.};
-  //poly(x, 2, a);
-  //if (x >= 1) {
-  //  while (1) {
-  //    // do nothing
-  //  }
-  //}
-  show();
+  float a[3] = {0., 0., 1.};
+  poly(x, 2, a);
+  if (x >= 1) {
+    while (1) {
+      // do nothing
+    }
+  }
+  //show();
 }
