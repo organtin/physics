@@ -1,0 +1,171 @@
+\documentclass[12pt, a4paper]{physathome}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{listings}
+
+%SetFonts
+
+%SetFonts
+
+\renewcommand\experimentId{20210322-1-v1}
+\begin{document}
+\selectlanguage{italian}
+\experiment{La Legge di Hooke}
+\Author{Giovanni Organtini -- Sapienza Universit\`a di Roma (Italy).}
+\begin{intro}
+Lo studio della dinamica di una molla consiste nell'analisi dell'andamento della posizione dell'estremo  di una molla, che indichiamo con~$x(t)$, in funzione del tempo~$t$. \`E facile vedere che $x(t)$ dev'essere una funzione sinusoidale, osservando banalmente come si muove l'estremo libero di una molla con l'altro estremo fissato. Si tratta quindi di un caso la cui soluzione \`e nota prima ancora della forma dell'equazione del moto.
+
+In questo esperimento studiamo le caratteristiche dinamiche di una molla che, di per s\'e, non \`e poi cos\'\i{} interessante, ma lo diventa se si pensa che la forza elastica rappresenta la forma pi\'u semplice di forza che dipende dalla distanza.
+
+In questo caso usiamo una scheda Arduino con un sensore ultrasonico per misurare la posizione dell'estremo libero della molla. 
+\end{intro}    
+\Title{Materiali}
+\begin{compactitem}
+        \item Scheda Arduino UNO.
+        \item Sensore ultrasonico HC-SR04.
+        \item Cavetti per il collegamento e una {\em breadboard}.
+        \item Una molla appesa in verticale, con un disco sull'estremo libero.
+        \item Pesi (in laboratorio).
+        \item Una bilancia.
+\end{compactitem}
+
+\Title{La Legge di Hooke}
+La seconda Legge di Newton ci dice che l'accelerazione sub\'\i{}ta da un corpo di massa~$m$ \`e proporzionale alla forza~$F$ cui \`e soggetto. Quest'ultima pu\`o essere pi\'u o meno complicata da rappresentare matematicamente. La forma pi\'u semplice per~$F$ \`e $F\simeq \mathrm{costante}$, come nel caso della forza peso.
+
+La forma immediatamente pi\'u complicata \`e quella per cui~$F$ dipende linearmente da un parametro~$x$: $F = a+bx$. In generale, se una forza \`e funzione di un parametro~$x$ si pu\`o sempre scrivere che
+
+\begin{equation}
+F(x) \simeq F(x_0) + F'(x_0)\left(x-x_0\right)+\frac{F''(x_0)}{2}\left(x-x_0\right)^2+\cdots\,,
+\end{equation}
+espandendone l'espressione in serie di Taylor attorno al punto~$x_0$. Se~$x_0$ \`e un punto di equilibrio, $F(x_0)=0$. In questo caso, per variazioni piccole del parametro~$x$ attorno a~$x_0$ si possono trascurare i termini di ordine superiore per cui
+
+\begin{equation}
+F(x) \simeq F'(x_0)\left(x-x_0\right)\,.
+\end{equation}
+Se il parametro~$x$ rappresenta la posizione dell'estremo della molla, $x-x_0$ ne rappresenta lo spostamento~$\Delta x$ e, ponendo~$F'(x_0) = -k$, otteniamo la Legge di Hooke
+
+\begin{equation}
+F(x) = -k\Delta x\,.
+\end{equation}
+Questa legge, dunque, presenta un interesse che va ben al di l\`a della possibilit\`a di prevedere il comportamento di una molla (che francamente non \`e cos\'\i{} interessante). Le forze interatomiche che consentono a un solido di mantenere la sua forma, per esempio, certamente dipendono dalla distanza tra gli atomi di cui \`e composto (altrimenti non sarebbe possibile staccarne un pezzo). La dipendenza di queste forze dalla distanza pu\`o essere complicata a piacere, ma fintanto che le variazioni rispetto alle distanze di equilibrio sono piccole, si pu\`o sempre fare l'approssimazione illustrata sopra, e immaginare che gli atomi di un solido siano, a tutti gli effetti, legati con molle gli uni agli altri. 
+
+In definitiva, la Legge di Hooke descrive tutti quei fenomeni nei quali un sistema \`e vicino all'equilibrio e soggetto a una forza che varia poco con un parametro. Il moto di un pendolo semplice, per esempio, si descrive con la stessa soluzione del moto di una molla perch\'e la forza netta cui \`e soggetto non \`e costante, ma dipende poco dall'angolo~$\theta$, per cui si pu\`o scrivere che $F=mg\sin\theta\simeq mg\theta$ (in cui $mg$ gioca il ruolo di~$-k$ e~$\theta$ quello di~$\Delta x$).
+
+Studiare la Legge di Hooke significa studiare da quali parametri dipende il moto. Secondo il sistema fisico d'interesse, questi possono variare, ma le relazioni tra essi restano le stesse.
+
+\Title{L'apparato sperimentale}
+Per acquisire i dati usa un sensore ultrasonico con Arduino. Il programma non deve far altro che misurare il tempo che scorre e la corrispondente distanza tra il sensore e un ostacolo, e inviare tali dati alla porta USB. L'ostacolo \`e rappresentato dall'estremo libero della molla, cui \`e fissato uno {\em schermo} realizzato con un CD che serve a intercettare efficacemente il segnale di ultrasuoni (considera che questo fuoriesce dal dispositivo con un'ampiezza di almeno~$20^\circ$).
+
+Con un tale sistema, i dati saranno disposti su due colonne: i tempi~$t_i$ e le posizioni corrispondenti~$x_i$, misurate in un sistema di riferimento con l'origine nel sensore~HC-SR04 e l'asse delle~$x$ positive uscente da questo. Nota che, per eseguire molte delle misure previste in questa esercitazione, non avrai bisogno di conoscere le posizioni assolute, ma solo le sue variazioni in unit\`a arbitrarie. Non \`e quindi necessario conoscere con precisione estrema la velocit\`a del suono: basta considerarla una costante.
+
+\Title{L'esperimento}
+Per la misura, dopo aver determinato la massa~$m$ del peso che agisce sulla molla, fai partire l'acquisizione. Allunga la molla prestando attenzione a non introdurre spostamenti significativi in direzioni diverse dalla verticale e lascia andare il sistema, che inizier\`a a oscillare. Ricorda che l'approssimazione fatta sopra vale per spostamenti {\em piccoli}.
+
+Ripeti l'esperimento cambiando la massa~$m$ del peso. Acquisisci i dati relativi ad almeno cinque masse diverse. 
+
+\Title{Analisi dei dati}
+Per ognuna delle masse~$m_j$, $j=1,\ldots,N$, fai un grafico della posizione~$x_j(t_i)$ in funzione del tempo. Osserva il grafico e fai le tue considerazioni. Determina il periodo delle oscillazioni~$T_j$. Un possibile modo per farlo \`e il seguente. Per ogni~$j$ trova la posizione media~$\langle x_j\rangle$, che rappresenta la distanza tra la molla e il sensore quando la molla \`e a riposo. Sottraendo tale numero da tutte le~$x_j(t_i)$ otterrai le posizioni~$x'_j(t_i)= x_j(t_i)-\langle x_j\rangle$ misurate in un sistema di riferimento con l'origine nel punto di equilibrio.
+
+Trova quindi gli istanti di tempo nei quali la molla attraversa l'origine (cio\`e il punto in cui \`e nella condizione di equilibrio). Per farlo basta calcolare il prodotto~$p_{i,i+1} = x'_j(t_i)x'_j(t_{i+1})$: se tale prodotto \`e negativo significa che le due posizioni al tempo~$t_i$ e al tempo~$t_{i+1}$ sono discordi e quindi il sistema \`e passato dall'origine in un istante $t\in\left[t_i,\,t_{i+1}\right]$. Approssimando la traiettoria con una retta, la sua equazione \`e
+
+\beq
+x(t) = m(t-t_i)+x(t_i)\,,
+\eeq
+con
+
+\beq
+m = \frac{x(t_{i+1})-x(t_i)}{t_{i+1}-t_{i}}\,,
+\eeq
+e quindi $x(t)=0$ quando
+
+\beq
+t = t_i-\frac{x(t_i)}{m}\,.
+\eeq
+In questo modo potrai determinare tutti gli istanti di tempo nei quali la molla ha attraversato l'origine dell'asse che ne rappresenta la posizione. Il periodo della molla~$T$ si trova come il doppio della media della differenza tra due di questi istanti consecutivi.
+
+Fai quindi un grafico di~$T$ in funzione della massa~$m$. L'andamento \`e lineare? Se no, il periodo dipende comunque dalla massa? Se s\'\i{}, prova a ipotizzare la relazione esistente tra~$T$ ed~$m$, usando argomenti dimensionali. La dinamica della molla pu\`o dipendere, in linea di principio, solo da~$m$ e dalla costante elastica~$k$. Verifica che le tue previsioni siano confermate dai dati sperimentali. Per farlo conviene linearizzare la dipendenza di~$T$ da~$m$, trasformando l'equazione in modo che, se~$T=f(m)$, $g(T)=g(f(m))=af(m)+b$. Per esempio, supponiamo che
+
+\beq
+T = A\frac{g}{km^{\frac{3}{2}}}
+\eeq
+(naturalmente questa non \`e la relazione corretta; lo si pu\`o dire senza conoscere la fisica del sistema, controllando le dimensioni fisiche di primo e secondo membro). In questo caso, per fare in modo che la relazione appaia come lineare basta definire
+
+\beq
+T' = T^{\frac{2}{3}}\,,
+\eeq
+ per cui
+ 
+ \beq
+ T' = \left(A\frac{g}{k}\right)^{\frac{2}{3}}\frac{1}{m}\,.
+ \eeq
+ Se poi si definisce $m'=\frac{1}{m}$ l'equazione diventa
+ 
+ \beq
+ T' = \left(A\frac{g}{k}\right)^{\frac{2}{3}}m'\,
+ \eeq
+ e il grafico di~$T'$ in funzione di~$m'$ ha l'aspetto di una retta passante per l'origine.
+
+In particolare, ricava la pendenza e l'intercetta della retta. Che significato hanno? Puoi predire quanto dovrebbe valere l'intercetta? La previsione \`e rispettata? Se no, perch\'e?
+
+Riesci a individuare una maniera di ricavare i periodi di oscillazione in modo che la loro incertezza sia inferiore? Ricorda che, se una grandezza fisica~$x$ \`e affetta da un'incertezza~$\sigma_x$, l'indeterminazione sulla grandezza $x/n$ \`e~$\sigma_x/n$.
+
+\Title{Aspetti qualitativi}
+L'ampiezza delle oscillazioni, a lungo andare, tende a diminuire. \`E possibile che l'ampiezza diminuisca linearmente col tempo? Perch\'e? Sapresti fare un'ipotesi su quale dovrebbe essere l'andamento, spiegandone le ragioni?
+
+\Title{Osservazioni generali}
+Prima d'iniziare qualsiasi serie di misurazioni, eseguite qualche test per abituarvi a eseguirle senza problemi. Annotate le misurazioni in modo ordinato e completo (indicando valori, incertezze e unit\`a di misura). Usate tabelle e grafici in modo appropriato.
+
+\vfill\par\eject
+\Title{Appendice}
+Per trovare gli istanti di tempo nei quali la molla attraversa il punto~$x'=0$ puoi usare il seguente codice in Python. Nel codice,~\lstinline{x} rappresenta la lista delle posizioni misurate e~\lstinline{t} quella dei corrispondenti tempi.
+
+\lstset{language = Python}
+\begin{lstlisting}
+# trova il valor medio delle posizioni e lo sottrae                                                             
+# da queste                                                                                                     
+xm = np.mean(x)
+x = [x-xm for x in x]
+# crea una lista vuota                                                                                          
+t0 = []
+# esegue un loop su tutte le misure                                                                             
+for i in range(len(x) - 2):
+    # calcola il prodotto x_i*x_{i+1}                                                                           
+    p = x[i]*x[i+1]
+    if p < 0:
+        # se negativo trova l'istante in cui x=0                                                                
+        m = (x[i+1]-x[i])/(t[i+1]-t[i])
+        tcross = t[i]-x[i]/m
+        t0.append(tcross)
+# trova i semi-periodi                                                                                          
+# t0[1:] e' una lista che contiene gli elementi di t 
+#        da 1 in poi                                                
+# t0[:-1] e' una lista che contiene gli elementi fino                                                           
+#        al penultimo                              
+# zip(a,b) "unisce" le liste a,b come i denti di una zip:
+# di fatto crea una specie di matrice con due righe e 
+# n colonne: nella prima riga ci sono gli elementi di a
+# e nella seconda quelli di b                                                            
+T = [t2-t1 for t2, t1 in zip(t0[1:],t0[:-1])]
+# trova i periodi                                                                                               
+T = [2*T for T in T]
+# ne calcola media e deviazione standard                                                                        
+Tm = np.mean(T)
+sigmaT = np.std(T, ddof = 1)
+\end{lstlisting}
+
+\Title{Curiosit\`a}
+Ai tempi di Robert Hooke (1635-1703) la pubblicazione di un risultato scientifico era un processo molto lungo e costoso. Occorreva incaricare un tipografo che impiegava molto tempo a preparare le matrici per la stampa, che venivano composte allineando i caratteri mobili uno per uno e a mano. Nel frattempo poteva succedere che qualcun altro arrivasse alla scoperta che s'intendeva pubblicare o, peggio, che la sua notizia si diffondesse. In tal modo, se un altro avesse pubblicato prima i risultati, avrebbe sottratto la primogenitura allo sfortunato scienziato che li aveva effettivamente ottenuti per primo.
+
+Cos\'\i{} molti scrivevano lettere ad alcuni colleghi nelle quali non svelavano in maniera palese la scoperta, ma la includevano sotto forma di enigma. Hooke trascrisse la sua scoperta come {\em ceiiinosssttuv} nel 1975, per svelarla tre anni pi\'u tardi come {\em ut tensio, sic vis} (come la tensione, cos\'\i{} la forza: cio\`e la forza, diremmo noi, \`e proporzionale all'estensione della molla), di cui la prima \`e l'anagramma.
+
+Hooke \`e stato anche il primo scienziato a essere pagato per condurre le sue ricerche: al tempo la ricerca era appannaggio di chi se lo poteva permettere essendo benestante e possedendo rendite di famiglia. Hooke riceveva invece uno stipendio dalla Royal Society.
+
+Fu anche protagonista di una accesa disputa con Isaac Newton: Hooke rivendicava la paternit\`a delle idee che avevano portato Newton a formulare la sua teoria della gravitazione universale. In effetti fu Edmund Halley a suggerire a Hooke che la forza che doveva esercitarsi tra i corpi celesti fosse inversamente proporzionale al quadrato della distanza, chiedendogli se riuscisse a dimostrarlo. Hooke non riusc\'\i{} nell'intento, e pubblic\`o soltanto uno scritto nel quale affermava che la forza diminuiva con la distanza. Non riuscendo a ottenere risultati da Hooke, Halley si rivolse allora a Newton che, nel frattempo stava elaborando la sua teoria, che termin\`o e pubblic\`o, grazie proprio ad Halley che ne finanzi\`o la preparazione e la stampa.
+
+La rivalit\`a tra Hooke e Newton era cominciata ben prima: il primo, infatti, sosteneva che la teoria corpuscolare della luce di Newton era sbagliata, e che la luce fosse un'onda, come fu provato da Thomas Young pi\'u d'un secolo dopo. \`E interessare osservare come entrambi avessero ragione, alla luce di quanto ne sappiamo oggi: in effetti la luce non \`e n\'e un'onda n\'e una particella, ma un {\em campo} che ha le caratteristiche di entrambe queste forme.
+\end{document}
